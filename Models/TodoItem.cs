@@ -5,6 +5,7 @@ namespace TestAspCoreTuto.Models
 {
     public class TodoItem
     {
+        [Required]
         public long Id { get; set; }
 
         [Required]

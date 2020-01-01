@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-CHOKRI\\Source\\Repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj": {}
+    "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-CHOKRI\\Source\\Repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj": {
+    "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-CHOKRI\\Source\\Repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj",
+        "projectUniqueName": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj",
         "projectName": "TestAspCoreTuto",
-        "projectPath": "C:\\Users\\PC-CHOKRI\\Source\\Repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj",
+        "projectPath": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj",
         "packagesPath": "C:\\Users\\PC-CHOKRI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-CHOKRI\\Source\\Repos\\CHOKONEX\\TestAspCoreTuto\\obj\\",
+        "outputPath": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
