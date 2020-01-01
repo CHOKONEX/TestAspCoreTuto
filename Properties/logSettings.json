@@ -1,0 +1,38 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "Microsoft": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.RollingFile", "Serilog.Sinks.Async", "Serilog.Sinks.Console" ],
+    "MinimumLevel": "Warning",
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "{NewLine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}"
+        }
+      },
+      //{
+      //  "Name": "ColoredConsole",
+      //  "Args": {
+      //    "outputTemplate": "{NewLine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}"
+      //  }
+      //},
+      {
+        "Name": "Async",
+        "Args": {
+          "configure": [
+            {
+              "Name": "RollingFile",
+              "Args": { "pathFormat": "bin\\Debug\\netcoreapp3.1/Logs/log-{Date}.log" }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
