@@ -37,7 +37,6 @@ namespace TestAspCoreTuto
             services.AddControllers();
             services.AddSwagger();
             services.AddCompression();
-            services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog(dispose: true));
             //services.AddApiVersioning(
             //    config =>
             //    {
