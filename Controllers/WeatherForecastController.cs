@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mime;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -26,10 +27,22 @@ namespace TestAspCoreTuto.Controllers
         }
 
         [HttpGet]
+        [Route("test")]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Test()
+        {
+            TodoItem custormer = new TodoItem
+            {
+                Id = 12,
+                Name = "GoGo12"
+            };
+            return new ObjectResult(custormer);
+        }
+
+        [HttpGet]
         [Produces("application/json")]
         public IEnumerable<WeatherForecast> Get()
         {
-            throw new Exception("erezr");
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

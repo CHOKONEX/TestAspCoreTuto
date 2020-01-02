@@ -5,8 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TestAspCoreTuto.Extensions;
 using Microsoft.Extensions.Logging;
-using Serilog;
 using TestAspCoreTuto.Bootstrapping.Middlewares;
+using System;
+using Microsoft.AspNetCore.Identity;
+using TestAspCoreTuto.Authorizations;
 
 namespace TestAspCoreTuto
 {
@@ -45,9 +47,10 @@ namespace TestAspCoreTuto
             //        config.DefaultApiVersion = new ApiVersion(1, 0);
             //        config.ApiVersionReader = new HeaderApiVersionReader("api-version");
             //    });
+
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<object> logger)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<object> logger, IHostApplicationLifetime applicationLifetime, IServiceProvider services)
         {
             if (env.IsDevelopment())
             {
@@ -73,6 +76,21 @@ namespace TestAspCoreTuto
 
             app.UseCustomSwagger();
             app.UseResponseCompression();
+
+            applicationLifetime.ApplicationStarted.Register(()=> StartedApplication(logger));
+            applicationLifetime.ApplicationStopping.Register(() => OnShutdown(logger));
+
+            services.AddRoles();
+        }
+
+        private void OnShutdown(ILogger<object> logger)
+        {
+            //logger.LogWarning("Application Ended");
+        }
+
+        private void StartedApplication(ILogger<object> logger)
+        {
+            logger.LogWarning("Application Started");
         }
     }
 }

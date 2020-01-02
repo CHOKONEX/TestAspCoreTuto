@@ -5,7 +5,7 @@ using System.IO.Compression;
 
 namespace TestAspCoreTuto.Extensions
 {
-    public static class CompressionExtension
+    public static class RolesExtension
     {
         public static void AddCompression(this IServiceCollection services)
         {
