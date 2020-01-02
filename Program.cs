@@ -3,42 +3,24 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
-using Serilog.Events;
-using Serilog.Formatting.Compact;
 using System;
 using System.IO;
+using TestAspCoreTuto.Extensions;
 
 namespace TestAspCoreTuto
 {
     public class Program
     {
-        private static IConfigurationBuilder builtConfig;
-
         public static void Main(string[] args)
         {
-            string executableLocation = AppContext.BaseDirectory;
-            string pathOfCommonSettingsFile = Path.Combine(executableLocation, "Properties");
-
-            builtConfig = new ConfigurationBuilder()
-            .AddJsonFile(Path.Combine(pathOfCommonSettingsFile, "logSettings.json"), optional: true)
-            .AddCommandLine(args)
-            ;
-
-            Log.Logger = new LoggerConfiguration()
-            .ReadFrom.Configuration(builtConfig.Build())
-            //.Enrich.FromLogContext()
-            //.WriteTo.Console(new RenderedCompactJsonFormatter())
-            //.WriteTo.ColoredConsole(
-            //       LogEventLevel.Verbose,
-            //       "{NewLine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}")
-            .CreateLogger();
+            IHost host = CreateHostBuilder(args).Build();
 
             try
             {
                 string environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-                Log.Information($"Starting up {environmentName}");
+                Log.Warning($"Starting up {environmentName}");
 
-                CreateHostBuilder(args).Build().Run();
+                host.Run();
             }
             catch (Exception ex)
             {
@@ -53,23 +35,31 @@ namespace TestAspCoreTuto
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
-                    .ConfigureAppConfiguration((hostingContext, config) =>
+                    .ConfigureAppConfiguration((hostingContext, configurationBuilder) =>
                     {
-                        string environmentName = hostingContext.HostingEnvironment.EnvironmentName;
-                        Log.Information($"Set config {environmentName}");
-                        config.AddConfiguration(builtConfig.Build());
+                        InitConfiguration(args, hostingContext, configurationBuilder);
                     })
-                    .ConfigureLogging((hostingContext, logging) =>
+                    .ConfigureLogging((hostingContext, loggingBuilder) =>
                     {
-                        logging.ClearProviders();
-                        logging.AddDebug();
-                        logging.AddConsole();
-                        logging.AddSerilog();
+                        loggingBuilder.AddLogger(hostingContext.HostingEnvironment, hostingContext.Configuration);
                     })
                     .ConfigureWebHostDefaults(webBuilder =>
                     {
                         webBuilder.UseStartup<Startup>();
                     });
+        }
+
+        private static void InitConfiguration(string[] args, HostBuilderContext hostBuilderContext, IConfigurationBuilder configurationBuilder)
+        {
+            string executableLocation = AppContext.BaseDirectory;
+            string pathOfCommonSettingsFile = Path.Combine(executableLocation, "Properties");
+
+            IConfigurationBuilder builtConfig = new ConfigurationBuilder()
+            .AddJsonFile(Path.Combine(pathOfCommonSettingsFile, "logSettings.json"), optional: true)
+            .AddCommandLine(args)
+            ;
+
+            configurationBuilder.AddConfiguration(builtConfig.Build());
         }
     }
 }

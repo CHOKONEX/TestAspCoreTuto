@@ -73,11 +73,12 @@ C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\bin\Debug\netcoreapp3.1
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\staticwebassets\TestAspCoreTuto.StaticWebAssets.Manifest.cache
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\staticwebassets\TestAspCoreTuto.StaticWebAssets.xml
-C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.AssemblyInfoInputs.cache
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.AssemblyInfo.cs
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.RazorTargetAssemblyInfo.cache
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.csproj.CopyComplete
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.dll
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.pdb
+C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.csprojAssemblyReference.cache
+C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cache
