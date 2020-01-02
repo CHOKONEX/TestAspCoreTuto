@@ -29,6 +29,7 @@ namespace TestAspCoreTuto.Controllers
         [Produces("application/json")]
         public IEnumerable<WeatherForecast> Get()
         {
+            throw new Exception("erezr");
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
