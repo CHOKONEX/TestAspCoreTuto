@@ -5,7 +5,6 @@
       "Microsoft": "Warning"
     }
   },
-  "AllowedHosts": "*",
   "Serilog": {
     "Using": [ "Serilog.Sinks.RollingFile", "Serilog.Sinks.Async", "Serilog.Sinks.Console" ],
     "MinimumLevel": "Warning",

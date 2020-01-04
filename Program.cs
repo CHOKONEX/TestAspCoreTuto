@@ -4,7 +4,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
-using System.IO;
 using TestAspCoreTuto.Bootstrapping.Extensions;
 using TestAspCoreTuto.Extensions;
 
@@ -35,7 +34,7 @@ namespace TestAspCoreTuto
             return Host.CreateDefaultBuilder(args)
                     .ConfigureAppConfiguration((hostingContext, configurationBuilder) =>
                     {
-                        configurationBuilder.AddConfiguration(args);
+                        configurationBuilder.AddConfiguration(hostingContext, args);
                     })
                     .ConfigureLogging((hostingContext, loggingBuilder) =>
                     {

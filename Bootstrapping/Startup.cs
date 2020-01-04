@@ -9,6 +9,7 @@ using TestAspCoreTuto.Bootstrapping.Middlewares;
 using System;
 using TestAspCoreTuto.Authorizations;
 using TestAspCoreTuto.Bootstrapping.Extensions;
+using TestAspCoreTuto.Bootstrapping.Helpers;
 
 namespace TestAspCoreTuto
 {
@@ -41,6 +42,15 @@ namespace TestAspCoreTuto
             services.AddCompression();
             services.AddJobsInjections();
             services.AddHostedServices();
+
+            // configure strongly typed settings objects
+            IConfigurationSection appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            // configure jwt authentication
+            AppSettings appSettings = appSettingsSection.Get<AppSettings>();
+            string secret = appSettings.Secret;
+
             //services.AddApiVersioning(
             //    config =>
             //    {

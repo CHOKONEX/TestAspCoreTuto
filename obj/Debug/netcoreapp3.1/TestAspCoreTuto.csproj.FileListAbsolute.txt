@@ -92,3 +92,5 @@ C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\bin\Debug\netcoreapp3.1
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\bin\Debug\netcoreapp3.1\Properties\appsettings.Development.json
+C:\Users\PC-CHOKRI\Source\repos\CHOKONEX\TestAspCoreTuto\bin\Debug\netcoreapp3.1\Properties\appsettings.Production.json
