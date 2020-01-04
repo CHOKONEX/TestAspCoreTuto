@@ -9,7 +9,7 @@ namespace TestAspCoreTuto.Authorizations
     {
         public static void AddRoles(this IServiceProvider services)
         {
-            CreateRoles(services).Wait();
+            //CreateRoles(services).Wait();
         }
 
         private static async Task CreateRoles(IServiceProvider serviceProvider)

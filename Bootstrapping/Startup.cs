@@ -7,8 +7,8 @@ using TestAspCoreTuto.Extensions;
 using Microsoft.Extensions.Logging;
 using TestAspCoreTuto.Bootstrapping.Middlewares;
 using System;
-using Microsoft.AspNetCore.Identity;
 using TestAspCoreTuto.Authorizations;
+using TestAspCoreTuto.Bootstrapping.Extensions;
 
 namespace TestAspCoreTuto
 {
@@ -39,6 +39,8 @@ namespace TestAspCoreTuto
             services.AddControllers();
             services.AddSwagger();
             services.AddCompression();
+            services.AddJobsInjections();
+            services.AddHostedServices();
             //services.AddApiVersioning(
             //    config =>
             //    {
@@ -77,7 +79,7 @@ namespace TestAspCoreTuto
             app.UseCustomSwagger();
             app.UseResponseCompression();
 
-            applicationLifetime.ApplicationStarted.Register(()=> StartedApplication(logger));
+            applicationLifetime.ApplicationStarted.Register(()=> OnStarted(logger));
             applicationLifetime.ApplicationStopping.Register(() => OnShutdown(logger));
 
             services.AddRoles();
@@ -85,12 +87,13 @@ namespace TestAspCoreTuto
 
         private void OnShutdown(ILogger<object> logger)
         {
-            //logger.LogWarning("Application Ended");
+            logger.LogWarning("Application Ended");
         }
 
-        private void StartedApplication(ILogger<object> logger)
+        private void OnStarted(ILogger<object> logger)
         {
-            logger.LogWarning("Application Started");
+            string environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+            logger.LogWarning($"Starting up {environmentName}");
         }
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
 using System.IO;
+using TestAspCoreTuto.Bootstrapping.Extensions;
 using TestAspCoreTuto.Extensions;
 
 namespace TestAspCoreTuto
@@ -17,9 +18,6 @@ namespace TestAspCoreTuto
 
             try
             {
-                string environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-                Log.Warning($"Starting up {environmentName}");
-
                 host.Run();
             }
             catch (Exception ex)
@@ -37,7 +35,7 @@ namespace TestAspCoreTuto
             return Host.CreateDefaultBuilder(args)
                     .ConfigureAppConfiguration((hostingContext, configurationBuilder) =>
                     {
-                        InitConfiguration(args, hostingContext, configurationBuilder);
+                        configurationBuilder.AddConfiguration(args);
                     })
                     .ConfigureLogging((hostingContext, loggingBuilder) =>
                     {
@@ -47,19 +45,6 @@ namespace TestAspCoreTuto
                     {
                         webBuilder.UseStartup<Startup>();
                     });
-        }
-
-        private static void InitConfiguration(string[] args, HostBuilderContext hostBuilderContext, IConfigurationBuilder configurationBuilder)
-        {
-            string executableLocation = AppContext.BaseDirectory;
-            string pathOfCommonSettingsFile = Path.Combine(executableLocation, "Properties");
-
-            IConfigurationBuilder builtConfig = new ConfigurationBuilder()
-            .AddJsonFile(Path.Combine(pathOfCommonSettingsFile, "logSettings.json"), optional: true)
-            .AddCommandLine(args)
-            ;
-
-            configurationBuilder.AddConfiguration(builtConfig.Build());
         }
     }
 }
