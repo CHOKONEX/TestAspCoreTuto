@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace TestAspCoreTuto.Extensions
+namespace TestAspCoreTuto.Bootstrapping.Extensions
 {
     public static class LoggerExtension
     {
@@ -24,13 +23,13 @@ namespace TestAspCoreTuto.Extensions
         private static void CreateLogger(IConfiguration configuration)
         {
             Log.Logger = new LoggerConfiguration()
-           .ReadFrom.Configuration(configuration)
-           //.Enrich.FromLogContext()
-           //.WriteTo.Console(new RenderedCompactJsonFormatter())
-           //.WriteTo.ColoredConsole(
-           //       LogEventLevel.Verbose,
-           //       "{NewLine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}")
-           .CreateLogger();
+               .ReadFrom.Configuration(configuration)
+               //.Enrich.FromLogContext()
+               //.WriteTo.Console(new RenderedCompactJsonFormatter())
+               //.WriteTo.ColoredConsole(
+               //       LogEventLevel.Verbose,
+               //       "{NewLine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}")
+               .CreateLogger();
         }
     }
 }

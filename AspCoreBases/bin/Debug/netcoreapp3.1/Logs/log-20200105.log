@@ -68,3 +68,68 @@
 2020-01-05 18:53:30.824 +01:00 [Warning] Starting up Development
 2020-01-05 18:54:36.969 +01:00 [Warning] Starting up Development
 2020-01-05 18:56:32.289 +01:00 [Warning] Starting up Development
+2020-01-05 21:55:59.109 +01:00 [Warning] Starting up Development
+2020-01-05 21:57:46.084 +01:00 [Warning] Starting up Development
+2020-01-05 21:58:36.718 +01:00 [Warning] Starting up Development
+2020-01-05 22:24:16.952 +01:00 [Warning] Starting up Development
+2020-01-05 22:24:29.878 +01:00 [Warning] Starting up Development
+2020-01-05 22:24:30.437 +01:00 [Warning] HTTP "POST" "/users/authenticate" responded 200 in 320.4895 ms
+2020-01-05 22:24:30.583 +01:00 [Warning] HTTP "GET" "/users/1" responded 200 in 67.0658 ms
+2020-01-05 22:24:30.610 +01:00 [Warning] HTTP "GET" "/users/2" responded 200 in 3.9543 ms
+2020-01-05 22:24:30.640 +01:00 [Warning] HTTP "GET" "/users/countUsers" responded 200 in 9.4282 ms
+2020-01-05 22:24:30.660 +01:00 [Warning] HTTP "GET" "/users/getAll" responded 200 in 5.2394 ms
+2020-01-05 22:24:30.716 +01:00 [Warning] HTTP "POST" "/users/authenticate" responded 200 in 3.8002 ms
+2020-01-05 22:24:30.730 +01:00 [Warning] HTTP "GET" "/users/1" responded 200 in 4.0395 ms
+2020-01-05 22:24:30.743 +01:00 [Warning] HTTP "GET" "/users/2" responded 200 in 0.7494 ms
+2020-01-05 22:24:30.757 +01:00 [Warning] HTTP "GET" "/users/countUsers" responded 200 in 0.7469 ms
+2020-01-05 22:24:30.834 +01:00 [Warning] HTTP "GET" "/users/getAll" responded 200 in 0.5458 ms
+2020-01-05 22:24:30.923 +01:00 [Warning] HTTP "GET" "/api/weatherforecast" responded 200 in 9.3649 ms
+2020-01-05 22:25:53.440 +01:00 [Fatal] Application startup exception
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'TestAspCoreTuto.Bootstrapping.Middlewares.RequestResponseLoggingMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at TestAspCoreTuto.Program.Main(String[] args) in C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\Program.cs:line 19
+2020-01-05 22:25:53.523 +01:00 [Fatal] Application start-up failed
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'TestAspCoreTuto.Bootstrapping.Middlewares.RequestResponseLoggingMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at TestAspCoreTuto.Program.Main(String[] args) in C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\Program.cs:line 19
+2020-01-05 22:26:12.580 +01:00 [Warning] Starting up Development
+2020-01-05 22:26:13.158 +01:00 [Warning] HTTP "POST" "/users/authenticate" responded 200 in 330.2075 ms
+2020-01-05 22:26:13.328 +01:00 [Warning] HTTP "GET" "/users/1" responded 200 in 94.9717 ms
+2020-01-05 22:26:13.372 +01:00 [Warning] HTTP "GET" "/users/2" responded 200 in 3.4867 ms
+2020-01-05 22:26:13.408 +01:00 [Warning] HTTP "GET" "/users/countUsers" responded 200 in 7.7008 ms
+2020-01-05 22:26:13.422 +01:00 [Warning] HTTP "GET" "/users/getAll" responded 200 in 4.1317 ms
+2020-01-05 22:26:13.451 +01:00 [Warning] HTTP "POST" "/users/authenticate" responded 200 in 5.9903 ms
+2020-01-05 22:26:13.479 +01:00 [Warning] HTTP "GET" "/users/1" responded 403 in 6.1236 ms
+2020-01-05 22:26:13.516 +01:00 [Warning] HTTP "GET" "/users/2" responded 200 in 0.8409 ms
+2020-01-05 22:26:13.532 +01:00 [Warning] HTTP "GET" "/users/countUsers" responded 403 in 0.5924 ms
+2020-01-05 22:26:13.570 +01:00 [Warning] HTTP "GET" "/users/getAll" responded 403 in 0.6360 ms
+2020-01-05 22:26:13.605 +01:00 [Warning] HTTP "GET" "/api/weatherforecast" responded 200 in 9.8138 ms
+2020-01-05 22:27:09.124 +01:00 [Warning] Starting up Development
+2020-01-05 22:27:10.094 +01:00 [Fatal] HTTP "GET" "/api/weatherforecast" responded 200 in 50.3658 ms
+2020-01-05 22:27:10.169 +01:00 [Fatal] HTTP "POST" "/users/authenticate" responded 200 in 458.5366 ms
+2020-01-05 22:27:10.309 +01:00 [Fatal] HTTP "GET" "/users/1" responded 200 in 58.6252 ms
+2020-01-05 22:27:10.331 +01:00 [Fatal] HTTP "GET" "/users/2" responded 200 in 1.1053 ms
+2020-01-05 22:27:10.350 +01:00 [Fatal] HTTP "GET" "/users/countUsers" responded 200 in 5.2503 ms
+2020-01-05 22:27:10.363 +01:00 [Fatal] HTTP "GET" "/users/getAll" responded 200 in 2.7624 ms
+2020-01-05 22:27:10.383 +01:00 [Fatal] HTTP "POST" "/users/authenticate" responded 200 in 3.2024 ms
+2020-01-05 22:27:10.395 +01:00 [Fatal] HTTP "GET" "/users/1" responded 403 in 3.2031 ms
+2020-01-05 22:27:10.407 +01:00 [Fatal] HTTP "GET" "/users/2" responded 200 in 0.6765 ms
+2020-01-05 22:27:10.419 +01:00 [Fatal] HTTP "GET" "/users/countUsers" responded 403 in 0.5019 ms
+2020-01-05 22:27:10.428 +01:00 [Fatal] HTTP "GET" "/users/getAll" responded 403 in 0.4718 ms
+2020-01-05 22:34:42.041 +01:00 [Warning] Starting up Development

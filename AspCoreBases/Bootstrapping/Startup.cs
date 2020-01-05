@@ -1,6 +1,8 @@
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,7 +10,6 @@ using Microsoft.Extensions.Logging;
 using TestAspCoreTuto.Bootstrapping.Authorizations;
 using TestAspCoreTuto.Bootstrapping.Extensions;
 using TestAspCoreTuto.Bootstrapping.Helpers;
-using TestAspCoreTuto.Bootstrapping.Middlewares;
 using TestAspCoreTuto.Extensions;
 
 namespace TestAspCoreTuto.Bootstrapping
@@ -43,6 +44,7 @@ namespace TestAspCoreTuto.Bootstrapping
                 //options.Conventions.Add(new AddAuthorizeFiltersControllerConvention());
                 //TODO +WORK
             });
+            services.AddActionFilter();
             services.AddSwagger();
             services.AddCompression();
             services.AddInjections();
@@ -54,6 +56,12 @@ namespace TestAspCoreTuto.Bootstrapping
             services.AddAuthentification(Configuration);
             services.AddAuthorization(Configuration);
 
+            services.AddMvc(config =>
+            {
+                // Add XML Content Negotiation
+                config.RespectBrowserAcceptHeader = true;
+            });
+
             //TODO +WORK
             //services.AddMvc(config =>
             //{
@@ -64,15 +72,13 @@ namespace TestAspCoreTuto.Bootstrapping
             //});
             //TODO +WORK
 
-            //services.AddApiVersioning(
-            //    config =>
-            //    {
-            //        config.ReportApiVersions = true;
-            //        config.AssumeDefaultVersionWhenUnspecified = true;
-            //        config.DefaultApiVersion = new ApiVersion(1, 0);
-            //        config.ApiVersionReader = new HeaderApiVersionReader("api-version");
-            //    });
-
+            services.AddApiVersioning(options =>
+            {
+                options.ReportApiVersions = true;
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ApiVersionReader = new HeaderApiVersionReader("api-version");
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<object> logger, IHostApplicationLifetime applicationLifetime, IServiceProvider services)
@@ -87,7 +93,7 @@ namespace TestAspCoreTuto.Bootstrapping
                 //app.ConfigureExceptionHandler(logger);
             }
 
-            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
+            app.AddMiddleware(env);
 
             //app.UseHttpsRedirection();
 

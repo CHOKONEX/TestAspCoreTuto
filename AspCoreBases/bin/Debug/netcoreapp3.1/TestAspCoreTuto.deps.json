@@ -26,6 +26,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.0",
+          "Microsoft.AspNetCore.Mvc.Versioning": "4.1.1",
           "Microsoft.AspNetCore.StaticFiles": "2.2.0",
           "Microsoft.Extensions.Logging": "3.1.0",
           "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
@@ -426,6 +427,17 @@
       "Microsoft.AspNetCore.Http.Features/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "3.1.0"
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/4.1.1": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.7301.35616"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Mvc.Versioning.dll": {}
         }
       },
       "Microsoft.AspNetCore.StaticFiles/2.2.0": {
@@ -3755,6 +3767,13 @@
       "sha512": "sha512-0GNO7G290ULLrFcL7Yig7EYNpWF0ZisATpoPGszArH7wtuDDNt97o3vr4CANPzxAcJuXlhIPKuAhk+GPKm6AHg==",
       "path": "microsoft.aspnetcore.http.features/2.2.0",
       "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/4.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ioFhRz5gm2Ny+t758Jab638eTG8Uui++klcH00EgBuU/BQbjkbFY+9xw/CkoAChIcrJsoQP2NKDYJ09zN5jR0g==",
+      "path": "microsoft.aspnetcore.mvc.versioning/4.1.1",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.4.1.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.StaticFiles/2.2.0": {
       "type": "package",

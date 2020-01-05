@@ -7,8 +7,10 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
     {
         public static void AddHostedServices(this IServiceCollection services)
         {
-            services.AddHostedService<Worker>();
-            services.AddHostedService<QuartzHostedService>();
+            //TODO +WORK
+            //services.AddHostedService<Worker>();
+            //services.AddHostedService<QuartzHostedService>();
+            //TODO +WORK
         }
     }
 }
