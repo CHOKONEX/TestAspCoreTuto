@@ -10,7 +10,7 @@ namespace CslAppServicesConsumer.Tests.Test1
 {
     public class UserService
     {
-        private const string baseUrl = "https://localhost:44356";
+        private const string BaseUrl = "https://localhost:44356";
 
         public static async void Run()
         {
@@ -26,8 +26,14 @@ namespace CslAppServicesConsumer.Tests.Test1
                 var userConnected = await Authenticate(name, password);
                 string token = userConnected.Token;
 
-                var userFound = await GetById(token, userConnected.Id);
+                var userFound = await GetById(token, 1);
                 Console.WriteLine($"userFound: {userFound}");
+
+                var userFound2 = await GetById(token, 2);
+                Console.WriteLine($"userFound: {userFound2}");
+
+                var countUsers = await GetCountUsers(token);
+                Console.WriteLine($"countUsers: {countUsers}");
 
                 var list = await GetAll(token);
                 foreach (var user in list)
@@ -43,7 +49,7 @@ namespace CslAppServicesConsumer.Tests.Test1
 
         private static async Task<User> Authenticate(string username, string password)
         {
-            var url = $"{baseUrl}/users/authenticate";
+            var url = $"{BaseUrl}/users/authenticate";
             AuthenticateModel authenticateModel = new AuthenticateModel(username, password);
 
             JsonSerializerSettings jss = new JsonSerializerSettings();
@@ -67,7 +73,7 @@ namespace CslAppServicesConsumer.Tests.Test1
             try
             {
                 using var client = new HttpClient();
-                var url = $"{baseUrl}/users/getall";
+                var url = $"{BaseUrl}/users/getAll";
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
                 var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
@@ -77,7 +83,7 @@ namespace CslAppServicesConsumer.Tests.Test1
                     var list = JsonConvert.DeserializeObject<IEnumerable<User>>(json);
                     return list;
                 }
-                Console.WriteLine($"Response StatusCode={response.StatusCode}");
+                Console.WriteLine($"GetAll - Response StatusCode={response.StatusCode}");
             }
             catch (Exception e)
             {
@@ -91,7 +97,7 @@ namespace CslAppServicesConsumer.Tests.Test1
             try
             {
                 using var client = new HttpClient();
-                var url = $"{baseUrl}/users/{id}";
+                var url = $"{BaseUrl}/users/{id}";
                 client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
                 var response = await client.GetAsync(url);
                 if (response.IsSuccessStatusCode)
@@ -101,7 +107,7 @@ namespace CslAppServicesConsumer.Tests.Test1
                     var list = JsonConvert.DeserializeObject<User>(json);
                     return list;
                 }
-                Console.WriteLine($"Response StatusCode={response.StatusCode}");
+                Console.WriteLine($"GetById - Response StatusCode={response.StatusCode}");
             }
             catch (Exception e)
             {
@@ -109,6 +115,31 @@ namespace CslAppServicesConsumer.Tests.Test1
             }
 
             return null;
+        }
+
+        private static async Task<int> GetCountUsers(string token)
+        {
+            try
+            {
+                using var client = new HttpClient();
+                var url = $"{BaseUrl}/users/countUsers";
+                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+                var response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    //Console.WriteLine(json);
+                    var list = Convert.ToInt32(json);
+                    return list;
+                }
+                Console.WriteLine($"CountUsers - Response StatusCode={response.StatusCode}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return -1;
         }
     }
 }

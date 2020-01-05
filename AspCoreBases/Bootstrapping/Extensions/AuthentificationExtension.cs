@@ -31,6 +31,11 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
                         ValidateAudience = false
                     };
                 });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", 
+                    policy => policy.RequireRole("Admin"));
+            });
         }
     }
 }

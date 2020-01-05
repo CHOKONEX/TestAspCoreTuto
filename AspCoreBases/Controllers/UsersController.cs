@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TestAspCoreTuto.Tests.Test1;
 
 namespace TestAspCoreTuto.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UsersController : ControllerBase
@@ -29,27 +30,35 @@ namespace TestAspCoreTuto.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet("getall")]
+        [HttpGet("getAll")]
         public IActionResult GetAll()
         {
             var users = _userService.GetAll();
             return Ok(users);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             // only allow admins to access other user records
             var currentUserId = int.Parse(User.Identity.Name);
-            if (id != currentUserId && !User.IsInRole("Admin"))
+            var isAdmin = User.IsInRole("Admin");
+            if (id != currentUserId && !isAdmin)
                 return Forbid();
 
             var user = _userService.GetById(id);
-
             if (user == null)
                 return NotFound();
 
             return Ok(user);
+        }
+
+        [Authorize(Policy = "AdminOnly")]
+        [HttpGet("countUsers")]
+        public IActionResult GetCountUsers()
+        {
+            return Ok(_userService.GetAll().Count());
         }
     }
 }
