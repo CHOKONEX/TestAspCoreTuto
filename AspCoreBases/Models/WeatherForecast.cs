@@ -1,6 +1,6 @@
 using System;
 
-namespace TestAspCoreTuto
+namespace TestAspCoreTuto.Models
 {
     public class WeatherForecast
     {

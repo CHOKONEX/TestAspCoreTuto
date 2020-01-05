@@ -1,4 +1,5 @@
 ﻿using System;
+using CslAppServicesConsumer.Tests.Test1;
 
 namespace CslAppServicesConsumer
 {
@@ -6,7 +7,9 @@ namespace CslAppServicesConsumer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hi!");
+            UserService.Run();
+
+            Console.ReadLine();
         }
     }
 }

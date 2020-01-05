@@ -29,7 +29,7 @@ namespace TestAspCoreTuto.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet]
+        [HttpGet("getall")]
         public IActionResult GetAll()
         {
             var users = _userService.GetAll();
