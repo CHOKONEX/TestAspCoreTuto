@@ -8,7 +8,7 @@ namespace TestAspCoreTuto.Tests.Test1
 {
     public static class TokenGenerator
     {
-        public static string GenerateToken(int id, string role, string secret)
+        public static string GenerateToken(int id, string role, string email, string secret)
         {
             // authentication successful so generate jwt token
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -18,7 +18,8 @@ namespace TestAspCoreTuto.Tests.Test1
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, id.ToString()),
-                    new Claim(ClaimTypes.Role, role)
+                    new Claim(ClaimTypes.Role, role),
+                    new Claim(ClaimTypes.Email, email)
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

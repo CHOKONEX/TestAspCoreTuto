@@ -14,11 +14,29 @@ namespace TestAspCoreTuto.Tests.Test1
 
     public class UserService : IUserService
     {
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private List<User> _users = new List<User>
+        private readonly List<User> _users = new List<User>
         {
-            new User { Id = 1, FirstName = "Admin", LastName = "User", Username = "admin", Password = "admin", Role = "Admin" },
-            new User { Id = 2, FirstName = "Normal", LastName = "User", Username = "user", Password = "user", Role = "User" }
+            new User
+            {
+                Id = 1, FirstName = "Admin", 
+                LastName = "User", Username = "admin", 
+                Password = "admin", Role = "Admin",
+                Email = "admin@gmail.com", Poste = "Director", Department = "PARIS"
+            },
+            new User
+            {
+                Id = 2, FirstName = "Normal", 
+                LastName = "User", Username = "user", 
+                Password = "user", Role = "User",
+                Email = "user@gmail.com", Poste = "Employee", Department = "PARIS"
+            },
+            new User
+            {
+                Id = 3, FirstName = "dev",
+                LastName = "dev", Username = "dev",
+                Password = "dev", Role = "Dev",
+                Poste = "Employee", Department = "US"
+            }
         };
 
         private readonly AppSettings _appSettings;
@@ -31,24 +49,22 @@ namespace TestAspCoreTuto.Tests.Test1
         public User Authenticate(string username, string password)
         {
             var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);
-
-            // return null if user not found
             if (user == null)
                 return null;
 
-            user.Token = TokenGenerator.GenerateToken(user.Id, user.Role,_appSettings.Secret);
-            return user.WithoutPassword();
+            user.Token = TokenGenerator.GenerateToken(user.Id, user.Role, user.Email, _appSettings.Secret);
+            return user;
         }
 
         public IEnumerable<User> GetAll()
         {
-            return _users.WithoutPasswords();
+            return _users;
         }
 
         public User GetById(int id)
         {
             var user = _users.FirstOrDefault(x => x.Id == id);
-            return user.WithoutPassword();
+            return user;
         }
     }
 }

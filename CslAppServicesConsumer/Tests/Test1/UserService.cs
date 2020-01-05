@@ -35,8 +35,8 @@ namespace CslAppServicesConsumer.Tests.Test1
                 var countUsers = await GetCountUsers(token);
                 Console.WriteLine($"countUsers: {countUsers}");
 
-                var list = await GetAll(token);
-                foreach (var user in list)
+                IEnumerable<User> list = await GetAll(token);
+                foreach (User user in list)
                 {
                     Console.WriteLine($"user: {user}");
                 }

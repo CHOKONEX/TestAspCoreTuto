@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using TestAspCoreTuto.Authorizations;
+using TestAspCoreTuto.Bootstrapping.Authorizations;
 using TestAspCoreTuto.Bootstrapping.Extensions;
 using TestAspCoreTuto.Bootstrapping.Helpers;
 using TestAspCoreTuto.Bootstrapping.Middlewares;
@@ -20,7 +20,7 @@ namespace TestAspCoreTuto.Bootstrapping
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -37,7 +37,12 @@ namespace TestAspCoreTuto.Bootstrapping
                     });
             });
             services.AddRouting(options => options.LowercaseUrls = true);
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                //TODO +WORK
+                //options.Conventions.Add(new AddAuthorizeFiltersControllerConvention());
+                //TODO +WORK
+            });
             services.AddSwagger();
             services.AddCompression();
             services.AddInjections();
@@ -47,6 +52,17 @@ namespace TestAspCoreTuto.Bootstrapping
             IConfigurationSection appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
             services.AddAuthentification(Configuration);
+            services.AddAuthorization(Configuration);
+
+            //TODO +WORK
+            //services.AddMvc(config =>
+            //{
+            //    var policy = new AuthorizationPolicyBuilder()
+            //        .RequireAuthenticatedUser()
+            //        .Build();
+            //    config.Filters.Add(new AuthorizeFilter(policy));
+            //});
+            //TODO +WORK
 
             //services.AddApiVersioning(
             //    config =>
@@ -89,8 +105,6 @@ namespace TestAspCoreTuto.Bootstrapping
 
             applicationLifetime.ApplicationStarted.Register(()=> OnStarted(logger));
             applicationLifetime.ApplicationStopping.Register(() => OnShutdown(logger));
-
-            services.AddRoles();
         }
 
         private static void OnShutdown(ILogger logger)

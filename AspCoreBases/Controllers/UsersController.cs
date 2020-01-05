@@ -55,6 +55,7 @@ namespace TestAspCoreTuto.Controllers
         }
 
         [Authorize(Policy = "AdminOnly")]
+        [Authorize(Policy = "ShouldBeADirectorInParis")]
         [HttpGet("countUsers")]
         public IActionResult GetCountUsers()
         {

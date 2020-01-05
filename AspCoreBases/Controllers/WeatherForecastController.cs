@@ -12,6 +12,7 @@ namespace TestAspCoreTuto.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [AllowAnonymous]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

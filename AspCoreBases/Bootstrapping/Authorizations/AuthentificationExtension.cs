@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using TestAspCoreTuto.Bootstrapping.Helpers;
 
-namespace TestAspCoreTuto.Bootstrapping.Extensions
+namespace TestAspCoreTuto.Bootstrapping.Authorizations
 {
     public static class AuthentificationExtension
     {
@@ -14,7 +14,8 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
             IConfigurationSection appSettingsSection = configuration.GetSection("AppSettings");
             AppSettings appSettings = appSettingsSection.Get<AppSettings>();
             byte[] key = Encoding.ASCII.GetBytes(appSettings.Secret);
-            services.AddAuthentication(x =>
+            services
+                .AddAuthentication(x =>
                 {
                     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -31,11 +32,6 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
                         ValidateAudience = false
                     };
                 });
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("AdminOnly", 
-                    policy => policy.RequireRole("Admin"));
-            });
         }
     }
 }

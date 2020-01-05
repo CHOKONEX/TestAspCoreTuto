@@ -7,7 +7,7 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
     {
         public static void AddInjections(this IServiceCollection services)
         {
-            services.AddScoped<IUserService, UserService>();
+            services.AddSingleton<IUserService, UserService>();
         }
     }
 }
