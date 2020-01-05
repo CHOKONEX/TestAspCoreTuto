@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAspCoreTuto", "TestAspCoreTuto.csproj", "{28134CC5-C76D-4493-8E51-151EE9ED6DD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CslAppServicesConsumer", "..\CslAppServicesConsumer\CslAppServicesConsumer.csproj", "{F950FA48-FF5F-412D-892E-E0F9A4075D30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslAppServicesConsumer", "..\CslAppServicesConsumer\CslAppServicesConsumer.csproj", "{80568795-824A-41C4-9DD9-ABC898D35263}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{28134CC5-C76D-4493-8E51-151EE9ED6DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28134CC5-C76D-4493-8E51-151EE9ED6DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28134CC5-C76D-4493-8E51-151EE9ED6DD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F950FA48-FF5F-412D-892E-E0F9A4075D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F950FA48-FF5F-412D-892E-E0F9A4075D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F950FA48-FF5F-412D-892E-E0F9A4075D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F950FA48-FF5F-412D-892E-E0F9A4075D30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80568795-824A-41C4-9DD9-ABC898D35263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80568795-824A-41C4-9DD9-ABC898D35263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80568795-824A-41C4-9DD9-ABC898D35263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80568795-824A-41C4-9DD9-ABC898D35263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
