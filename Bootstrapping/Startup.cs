@@ -1,17 +1,17 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TestAspCoreTuto.Extensions;
 using Microsoft.Extensions.Logging;
-using TestAspCoreTuto.Bootstrapping.Middlewares;
-using System;
 using TestAspCoreTuto.Authorizations;
 using TestAspCoreTuto.Bootstrapping.Extensions;
 using TestAspCoreTuto.Bootstrapping.Helpers;
+using TestAspCoreTuto.Bootstrapping.Middlewares;
+using TestAspCoreTuto.Extensions;
 
-namespace TestAspCoreTuto
+namespace TestAspCoreTuto.Bootstrapping
 {
     public class Startup
     {
@@ -40,16 +40,13 @@ namespace TestAspCoreTuto
             services.AddControllers();
             services.AddSwagger();
             services.AddCompression();
+            services.AddInjections();
             services.AddJobsInjections();
             services.AddHostedServices();
 
-            // configure strongly typed settings objects
             IConfigurationSection appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
-
-            // configure jwt authentication
-            AppSettings appSettings = appSettingsSection.Get<AppSettings>();
-            string secret = appSettings.Secret;
+            services.AddAuthentification(Configuration);
 
             //services.AddApiVersioning(
             //    config =>
@@ -80,6 +77,7 @@ namespace TestAspCoreTuto
 
             app.UseRouting();
             app.UseCors("AllowAllOrigins");
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
@@ -95,12 +93,12 @@ namespace TestAspCoreTuto
             services.AddRoles();
         }
 
-        private void OnShutdown(ILogger<object> logger)
+        private static void OnShutdown(ILogger logger)
         {
             logger.LogWarning("Application Ended");
         }
 
-        private void OnStarted(ILogger<object> logger)
+        private static void OnStarted(ILogger logger)
         {
             string environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
             logger.LogWarning($"Starting up {environmentName}");

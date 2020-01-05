@@ -1,9 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using System;
+using TestAspCoreTuto.Bootstrapping;
 using TestAspCoreTuto.Bootstrapping.Extensions;
 using TestAspCoreTuto.Extensions;
 
@@ -29,7 +28,7 @@ namespace TestAspCoreTuto
             }
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args)
+        private static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
                     .ConfigureAppConfiguration((hostingContext, configurationBuilder) =>

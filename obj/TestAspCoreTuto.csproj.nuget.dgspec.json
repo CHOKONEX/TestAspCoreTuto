@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj": {}
+    "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCore\\TestAspCoreTuto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj": {
+    "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCore\\TestAspCoreTuto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj",
+        "projectUniqueName": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCore\\TestAspCoreTuto.csproj",
         "projectName": "TestAspCoreTuto",
-        "projectPath": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCoreTuto.csproj",
+        "projectPath": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCore\\TestAspCoreTuto.csproj",
         "packagesPath": "C:\\Users\\PC-CHOKRI\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\obj\\",
+        "outputPath": "C:\\Users\\PC-CHOKRI\\Source\\repos\\CHOKONEX\\TestAspCoreTuto\\TestAspCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -43,6 +43,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Microsoft.AspNetCore.StaticFiles": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -54,6 +62,10 @@
             "Microsoft.Extensions.PlatformAbstractions": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             },
             "Microsoft.OpenApi": {
               "target": "Package",
@@ -102,6 +114,10 @@
             "Swashbuckle.AspNetCore.SwaggerUi": {
               "target": "Package",
               "version": "[5.0.0-rc5, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [
