@@ -8,3 +8,13 @@ ng new <name>
 npm cache clean
 npm update -g
 npm install npm@latest -g
+
+
+ext install tslint
+ext install autoimport
+ext install Angular2
+https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2
+ext install angular2-snippets
+https://marketplace.visualstudio.com/items?itemName=danwahlin.angular2-snippets
+ext install vscode-angular2-files
+https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files
