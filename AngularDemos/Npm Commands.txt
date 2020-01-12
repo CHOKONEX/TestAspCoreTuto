@@ -18,3 +18,12 @@ ext install angular2-snippets
 https://marketplace.visualstudio.com/items?itemName=danwahlin.angular2-snippets
 ext install vscode-angular2-files
 https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files
+
+
+
+
+
+
+-----------------
+
+http://www.learn-angular.fr/le-module-httpmodule/
