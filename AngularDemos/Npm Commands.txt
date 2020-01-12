@@ -1,0 +1,10 @@
+node -v
+node — version
+
+ng update @angular/cli @angular/core
+
+ng new <name>
+
+npm cache clean
+npm update -g
+npm install npm@latest -g
