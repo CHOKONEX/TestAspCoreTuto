@@ -2,10 +2,6 @@
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/TestAspCoreTuto/v16/Server/sqlite3
-/.vs/TestAspCoreTuto/v16
-/bin
-/obj
 /AspCoreBases/.vs/TestAspCoreTuto/v16
 /TestAspCoreTuto/bin
 /TestAspCoreTuto/obj
