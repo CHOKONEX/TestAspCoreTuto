@@ -21,7 +21,8 @@ https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files
 
 
 
-
+yarn run
+yarn start
 
 
 -----------------
