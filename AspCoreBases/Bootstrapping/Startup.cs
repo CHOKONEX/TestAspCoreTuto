@@ -61,7 +61,6 @@ namespace TestAspCoreTuto.Bootstrapping
                 // Add XML Content Negotiation
                 config.RespectBrowserAcceptHeader = true;
             });
-
             //TODO +WORK
             //services.AddMvc(config =>
             //{
