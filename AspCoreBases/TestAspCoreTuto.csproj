@@ -40,6 +40,11 @@
     <Folder Include="Extensions\" />
   </ItemGroup>
   
+  <ItemGroup>
+    <ProjectReference Include="..\App.Core.Infra\App.Core.Infra.csproj" />
+    <ProjectReference Include="..\Asp.Core\Asp.Core.csproj" />
+  </ItemGroup>
+  
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 

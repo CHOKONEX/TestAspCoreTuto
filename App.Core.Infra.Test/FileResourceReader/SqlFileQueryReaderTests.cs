@@ -1,4 +1,4 @@
-﻿using App.Core.Infra.FileResourceReader;
+﻿using App.Core.Infra.SqlResourcesReader;
 using Asp.Core.Common.AssemblyFileReader;
 using NUnit.Framework;
 

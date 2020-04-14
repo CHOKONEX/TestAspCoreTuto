@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace App.Core.Infra.FileResourceReader
+namespace App.Core.Infra.SqlResourcesReader
 {
     public class SqlFileQueryReader : ISqlFileQueryReader
     {

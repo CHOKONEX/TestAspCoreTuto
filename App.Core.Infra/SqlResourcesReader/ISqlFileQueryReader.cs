@@ -1,4 +1,4 @@
-﻿namespace App.Core.Infra.FileResourceReader
+﻿namespace App.Core.Infra.SqlResourcesReader
 {
     public interface ISqlFileQueryReader
     {
