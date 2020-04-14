@@ -12,7 +12,7 @@ namespace App.Core.Infra.SqlResourcesReader
     public class SqlFileQueryReader : ISqlFileQueryReader
     {
         private readonly string AssemblyName;
-        private IReadOnlyDictionary<string, string> Queries;
+        private IReadOnlyDictionary<string, string> SqlFileResources;
         readonly Assembly assembly = Assembly.GetExecutingAssembly();
 
         private readonly IAssemblyResourceReader _assemblyResourceReader;
@@ -21,13 +21,13 @@ namespace App.Core.Infra.SqlResourcesReader
         {
             _assemblyResourceReader = assemblyResourceReader ?? throw new ArgumentNullException(nameof(assemblyResourceReader));
             AssemblyName = assembly.GetName().Name;
-            GetQueries();
+            GetSqlFileResources();
         }
 
-        private void GetQueries()
+        private void GetSqlFileResources()
         {
             IEnumerable<string> sqlResources = assembly.GetManifestResourceNames().Where(x => x.EndsWith(".sql"));
-            Queries = _assemblyResourceReader.GetResourcesContent(assembly, sqlResources).Result;
+            SqlFileResources = _assemblyResourceReader.GetResourcesContent(assembly, sqlResources).Result;
         }
 
         public string GetQuery(string sqlFileName)
@@ -63,7 +63,7 @@ namespace App.Core.Infra.SqlResourcesReader
 
         private string SearchByLongResourceName(string fileName)
         {
-            if (!Queries.TryGetValue(fileName, out string value))
+            if (!SqlFileResources.TryGetValue(fileName, out string value))
             {
                 throw new FileNotFoundException($"Embedded file {fileName} could not be found in assembly {AssemblyName}.");
             }
@@ -72,7 +72,7 @@ namespace App.Core.Infra.SqlResourcesReader
 
         private string SearchFilesThatEndsBy(string fileName)
         {
-            IEnumerable<KeyValuePair<string, string>> resources = Queries.Where(x => x.Key.EndsWith(fileName));
+            IEnumerable<KeyValuePair<string, string>> resources = SqlFileResources.Where(x => x.Key.EndsWith(fileName));
             if (resources.Count() == 0)
             {
                 throw new FileNotFoundException($"Embedded file {fileName} could not be found in assembly {AssemblyName}.");
