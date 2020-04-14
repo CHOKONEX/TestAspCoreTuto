@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[16.2.0, )"
             },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            },
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[3.15.1, )"

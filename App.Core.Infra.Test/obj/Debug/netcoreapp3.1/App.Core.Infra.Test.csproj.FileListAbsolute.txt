@@ -95,3 +95,6 @@ C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra.Test\obj\Debu
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra.Test\obj\Debug\netcoreapp3.1\App.Core.Infra.Test.csproj.CopyComplete
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra.Test\obj\Debug\netcoreapp3.1\App.Core.Infra.Test.dll
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra.Test\obj\Debug\netcoreapp3.1\App.Core.Infra.Test.pdb
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra.Test\bin\Debug\netcoreapp3.1\NetCore.AutoRegisterDi.dll

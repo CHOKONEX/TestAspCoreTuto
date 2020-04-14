@@ -44,11 +44,7 @@ namespace App.Core.Infra.SqlResourcesReader
             int countOccurences = sqlFileName.Count(x => x == '.');
             if (countOccurences > 1)
             {
-                if (!sqlFileName.StartsWith(AssemblyName))
-                {
-                    sqlFileName = $"{AssemblyName}.{sqlFileName}";
-                }
-                return SearchByLongResourceName(sqlFileName);
+                return SearchByLongResourceName(GetValidName(sqlFileName));
             }
             else
             {
@@ -56,11 +52,20 @@ namespace App.Core.Infra.SqlResourcesReader
             }
         }
 
+        private string GetValidName(string sqlFileName)
+        {
+            if (!sqlFileName.StartsWith(AssemblyName))
+            {
+                sqlFileName = $"{AssemblyName}.{sqlFileName}";
+            }
+            return sqlFileName;
+        }
+
         private string SearchByLongResourceName(string fileName)
         {
             if (!Queries.TryGetValue(fileName, out string value))
             {
-                throw new FileNotFoundException($"Embedded file {fileName} could not be found  in assembly {AssemblyName}.");
+                throw new FileNotFoundException($"Embedded file {fileName} could not be found in assembly {AssemblyName}.");
             }
             return value;
         }
