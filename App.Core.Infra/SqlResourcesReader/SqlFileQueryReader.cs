@@ -1,4 +1,5 @@
-﻿using Asp.Core.Common.AssemblyFileReader;
+﻿using Asp.Core.Attributes;
+using Asp.Core.Common.AssemblyFileReader;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Reflection;
 
 namespace App.Core.Infra.SqlResourcesReader
 {
+    [Singleton]
     public class SqlFileQueryReader : ISqlFileQueryReader
     {
         private readonly string AssemblyName;
@@ -17,7 +19,7 @@ namespace App.Core.Infra.SqlResourcesReader
 
         public SqlFileQueryReader(IAssemblyResourceReader assemblyResourceReader)
         {
-            _assemblyResourceReader = assemblyResourceReader;
+            _assemblyResourceReader = assemblyResourceReader ?? throw new ArgumentNullException(nameof(assemblyResourceReader));
             AssemblyName = assembly.GetName().Name;
             GetQueries();
         }

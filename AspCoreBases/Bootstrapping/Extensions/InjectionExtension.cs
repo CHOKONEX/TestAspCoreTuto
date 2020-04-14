@@ -1,4 +1,4 @@
-﻿using App.Core.Infra.SqlResourcesReader;
+﻿using App.Core.Infra;
 using Asp.Core.Common.AssemblyFileReader;
 using Microsoft.Extensions.DependencyInjection;
 using TestAspCoreTuto.Tests.Test1;
@@ -9,15 +9,15 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
     {
         public static void AddInjections(this IServiceCollection services)
         {
-            AddInjectionsFromInfra(services);
+            AddInjectionsFromCore(services);
+            InfraInjectionModule.AddInjections(services);
 
             services.AddSingleton<IUserService, UserService>();
         }
 
-        private static void AddInjectionsFromInfra(IServiceCollection services)
+        private static void AddInjectionsFromCore(IServiceCollection services)
         {
             services.AddSingleton<IAssemblyResourceReader, AssemblyResourceReader>();
-            services.AddSingleton<ISqlFileQueryReader, SqlFileQueryReader>();
         }
     }
 }

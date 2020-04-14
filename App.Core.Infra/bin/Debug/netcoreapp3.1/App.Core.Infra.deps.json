@@ -8,10 +8,42 @@
     ".NETCoreApp,Version=v3.1": {
       "App.Core.Infra/1.0.0": {
         "dependencies": {
-          "Asp.Core": "1.0.0"
+          "Asp.Core": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.3",
+          "NetCore.AutoRegisterDi": "1.1.0"
         },
         "runtime": {
           "App.Core.Infra.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/2.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.3"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.18136"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "3.1.3.0",
+            "fileVersion": "3.100.320.12802"
+          }
+        }
+      },
+      "NetCore.AutoRegisterDi/1.1.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "2.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetCore.AutoRegisterDi.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
         }
       },
       "Asp.Core/1.0.0": {
@@ -26,6 +58,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.Extensions.DependencyInjection/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gqQviLfuA31PheEGi+XJoZc1bc9H9RsPa9Gq9XuDct7XGWSR9eVXjK5Sg7CSUPhTFHSuxUFY12wcTYLZ4zM1hg==",
+      "path": "microsoft.extensions.dependencyinjection/2.1.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-woeS5XeBChU76EmtFCwGHKgBfsYIn76u3myDq4zNY2ZrcwzBMNEViK2FRgXDgF11PBNbGdKCXsWFFZDtqPW0nQ==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.3",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.3.1.3.nupkg.sha512"
+    },
+    "NetCore.AutoRegisterDi/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XxDgbq+ia9ljHUTudWtL+AzI649RoK1RvvQvnPHGCN6DUjfkTBV8BhEYBbMO3wYXOxBpmAurR1SeyZJbNI7/Dg==",
+      "path": "netcore.autoregisterdi/1.1.0",
+      "hashPath": "netcore.autoregisterdi.1.1.0.nupkg.sha512"
     },
     "Asp.Core/1.0.0": {
       "type": "project",

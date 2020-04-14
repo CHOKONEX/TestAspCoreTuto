@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Options;
+﻿using App.Core.Infra.SqlResourcesReader;
+using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TestAspCoreTuto.Bootstrapping.Helpers;
@@ -40,14 +42,19 @@ namespace TestAspCoreTuto.Tests.Test1
         };
 
         private readonly AppSettings _appSettings;
+        private readonly ISqlFileQueryReader _sqlFileQueryReader;
 
-        public UserService(IOptions<AppSettings> appSettings)
+        public UserService(IOptions<AppSettings> appSettings, ISqlFileQueryReader sqlFileQueryReader)
         {
             _appSettings = appSettings.Value;
+            _sqlFileQueryReader = sqlFileQueryReader ?? throw new ArgumentNullException(nameof(sqlFileQueryReader));
         }
 
         public User Authenticate(string username, string password)
         {
+            string query = _sqlFileQueryReader.GetQuery("SqlTestFile.sql");
+            Console.WriteLine(query);
+
             var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);
             if (user == null)
                 return null;

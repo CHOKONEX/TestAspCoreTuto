@@ -165,5 +165,12 @@ C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\obj\Debug\netco
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\obj\Debug\netcoreapp3.1\TestAspCoreTuto.dll
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\obj\Debug\netcoreapp3.1\TestAspCoreTuto.pdb
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\App.Core.Infra.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Asp.Core.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\App.Core.Infra.pdb
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Asp.Core.pdb
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\NetCore.AutoRegisterDi.dll
