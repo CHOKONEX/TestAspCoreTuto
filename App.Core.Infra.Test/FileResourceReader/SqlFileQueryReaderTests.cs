@@ -11,7 +11,7 @@ namespace App.Core.Infra.Test.FileResourceReader
         public void Should_return_sql_query_when_use_short_file_name()
         {
             IAssemblyResourceReader assemblyResourceReader = new AssemblyResourceReader();
-            SqlFileQueryReader sut = new SqlFileQueryReader(assemblyResourceReader);
+            ISqlFileQueryReader sut = new SqlFileQueryReader(assemblyResourceReader);
             string query = sut.GetQuery("SqlTestFile.sql");
             Assert.IsNotEmpty(query);
         }
@@ -20,7 +20,7 @@ namespace App.Core.Infra.Test.FileResourceReader
         public void Should_return_sql_query_when_use_long_file_name()
         {
             IAssemblyResourceReader assemblyResourceReader = new AssemblyResourceReader();
-            SqlFileQueryReader sut = new SqlFileQueryReader(assemblyResourceReader);
+            ISqlFileQueryReader sut = new SqlFileQueryReader(assemblyResourceReader);
             string query = sut.GetQuery("SqlQueryFiles.Tests.SqlTestFile.sql");
             Assert.IsNotEmpty(query);
         }

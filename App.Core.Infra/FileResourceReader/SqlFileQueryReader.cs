@@ -7,14 +7,14 @@ using System.Reflection;
 
 namespace App.Core.Infra.FileResourceReader
 {
-    public class SqlFileQueryReader
+    public class SqlFileQueryReader : ISqlFileQueryReader
     {
         private readonly string AssemblyName;
         private IReadOnlyDictionary<string, string> Queries;
         readonly Assembly assembly = Assembly.GetExecutingAssembly();
 
         private readonly IAssemblyResourceReader _assemblyResourceReader;
-        
+
         public SqlFileQueryReader(IAssemblyResourceReader assemblyResourceReader)
         {
             _assemblyResourceReader = assemblyResourceReader;
@@ -28,34 +28,33 @@ namespace App.Core.Infra.FileResourceReader
             Queries = _assemblyResourceReader.GetResourcesContent(assembly, sqlResources).Result;
         }
 
-        public string GetQuery(string fileName)
+        public string GetQuery(string sqlFileName)
         {
-            if (string.IsNullOrWhiteSpace(fileName))
+            if (string.IsNullOrWhiteSpace(sqlFileName))
             {
-                throw new ArgumentNullException(nameof(fileName));
+                throw new ArgumentNullException(nameof(sqlFileName));
             }
-            if (!fileName.EndsWith(".sql"))
+            if (!sqlFileName.EndsWith(".sql"))
             {
-                throw new ArgumentException($"{fileName} is not an sql file");
+                throw new ArgumentException($"{sqlFileName} is not an sql file");
             }
 
-            string fileToSearch = fileName.Replace(".sql", "");
-            if (fileToSearch.Contains("."))
+            int countOccurences = sqlFileName.Count(x => x == '.');
+            if (countOccurences > 1)
             {
-                if (!fileName.StartsWith(AssemblyName))
+                if (!sqlFileName.StartsWith(AssemblyName))
                 {
-                    fileName = $"{AssemblyName}.{fileName}";
+                    sqlFileName = $"{AssemblyName}.{sqlFileName}";
                 }
-
-                return SearchByResourceName(fileName);
+                return SearchByLongResourceName(sqlFileName);
             }
             else
             {
-                return SearchFilesThatEndsBy(fileName);
+                return SearchFilesThatEndsBy(sqlFileName);
             }
         }
 
-        private string SearchByResourceName(string fileName)
+        private string SearchByLongResourceName(string fileName)
         {
             if (!Queries.TryGetValue(fileName, out string value))
             {
