@@ -10,6 +10,16 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
+      },
+      "App.Core.Dto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/App.Core.Dto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/App.Core.Dto.dll": {}
+        }
       }
     }
   },
@@ -44,10 +54,16 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "App.Core.Dto/1.0.0": {
+      "type": "project",
+      "path": "../App.Core.Dto/App.Core.Dto.csproj",
+      "msbuildProject": "../App.Core.Dto/App.Core.Dto.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "App.Core.Dto >= 1.0.0",
       "Newtonsoft.Json >= 12.0.3"
     ]
   },
@@ -83,7 +99,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\App.Core.Dto.csproj": {
+              "projectPath": "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\App.Core.Dto.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

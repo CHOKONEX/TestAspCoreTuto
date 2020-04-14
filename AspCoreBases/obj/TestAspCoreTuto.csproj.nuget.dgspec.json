@@ -4,6 +4,63 @@
     "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\AspCoreBases\\TestAspCoreTuto.csproj": {}
   },
   "projects": {
+    "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\App.Core.Dto.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\App.Core.Dto.csproj",
+        "projectName": "App.Core.Dto",
+        "projectPath": "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\App.Core.Dto.csproj",
+        "packagesPath": "C:\\Users\\PC-CHOKRI\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\PC-CHOKRI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Infra\\App.Core.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -32,6 +89,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\App.Core.Dto.csproj": {
+                "projectPath": "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\App.Core.Dto\\App.Core.Dto.csproj"
+              },
               "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\Asp.Core\\Asp.Core.csproj": {
                 "projectPath": "C:\\Users\\PC-CHOKRI\\Documents\\GitHub\\TestAspCoreTuto\\Asp.Core\\Asp.Core.csproj"
               }
@@ -47,6 +107,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.35, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
               "version": "[3.1.3, )"
@@ -54,6 +122,10 @@
             "NetCore.AutoRegisterDi": {
               "target": "Package",
               "version": "[1.1.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
             }
           },
           "imports": [

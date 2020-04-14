@@ -9,3 +9,5 @@ C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra\obj\Debug\net
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra\obj\Debug\netcoreapp3.1\App.Core.Infra.csproj.CopyComplete
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra\obj\Debug\netcoreapp3.1\App.Core.Infra.dll
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra\obj\Debug\netcoreapp3.1\App.Core.Infra.pdb
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra\bin\Debug\netcoreapp3.1\App.Core.Dto.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\App.Core.Infra\bin\Debug\netcoreapp3.1\App.Core.Dto.pdb

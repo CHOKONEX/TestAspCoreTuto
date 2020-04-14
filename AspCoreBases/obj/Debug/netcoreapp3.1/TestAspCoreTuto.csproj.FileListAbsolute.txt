@@ -174,3 +174,8 @@ C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netco
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\obj\Debug\netcoreapp3.1\TestAspCoreTuto.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\NetCore.AutoRegisterDi.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\App.Core.Dto.dll
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\App.Core.Dto.pdb

@@ -1,27 +1,29 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SqlQueryFiles\Readers\TestDapper\TestDapperOneToMany.sql" />
     <None Remove="SqlQueryFiles\Tests\SqlTestFile.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="SqlQueryFiles\Readers\TestDapper\TestDapperOneToMany.sql" />
     <EmbeddedResource Include="SqlQueryFiles\Tests\SqlTestFile.sql" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SqlQueryFiles\Readers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.3" />
     <PackageReference Include="NetCore.AutoRegisterDi" Version="1.1.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\App.Core.Dto\App.Core.Dto.csproj" />
     <ProjectReference Include="..\Asp.Core\Asp.Core.csproj" />
   </ItemGroup>
 

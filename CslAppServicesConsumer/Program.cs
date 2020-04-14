@@ -8,7 +8,7 @@ namespace CslAppServicesConsumer
         static void Main(string[] args)
         {
             UserService.Run();
-
+            DapperService.Run();
             Console.ReadLine();
         }
     }

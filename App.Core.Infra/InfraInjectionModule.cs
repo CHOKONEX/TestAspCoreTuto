@@ -13,7 +13,7 @@ namespace App.Core.Infra
         public static void AddInjections(IServiceCollection services)
         {
             IEnumerable<Type> singletons = Assembly.GetExecutingAssembly().GetTypes()
-                .Where(x => x.IsPublic && x.GetCustomAttributes<SingletonAttribute>() != null);
+                .Where(x => x.IsPublic && x.CustomAttributes != null && x.GetCustomAttributes().Any(attr => attr.GetType() == typeof(SingletonAttribute)));
             
             services.RegisterAssemblyPublicNonGenericClasses(Assembly.GetExecutingAssembly())
                 .Where(type => singletons.Contains(type))
