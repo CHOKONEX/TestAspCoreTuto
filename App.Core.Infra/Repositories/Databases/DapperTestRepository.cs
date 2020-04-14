@@ -2,6 +2,7 @@
 using App.Core.Infra.Database;
 using App.Core.Infra.SqlResourcesReader;
 using Asp.Core.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace App.Core.Infra.Repositories.Databases
 
         public DapperTestRepository(IDatabaseReader databaseReader, ISqlFileQueryReader sqlFileQueryReader)
         {
-            _databaseReader = databaseReader;
-            _sqlFileQueryReader = sqlFileQueryReader;
+            _databaseReader = databaseReader ?? throw new ArgumentNullException(nameof(databaseReader)); ;
+            _sqlFileQueryReader = sqlFileQueryReader ?? throw new ArgumentNullException(nameof(sqlFileQueryReader)); ;
         }
 
         public async Task<IEnumerable<Person>> GetPersons()

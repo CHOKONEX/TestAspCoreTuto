@@ -13,21 +13,21 @@ namespace App.Core.Infra.SqlResourcesReader
     {
         private readonly string AssemblyName;
         private IReadOnlyDictionary<string, string> SqlFileResources;
-        readonly Assembly assembly = Assembly.GetExecutingAssembly();
+        private readonly Assembly _assembly = Assembly.GetExecutingAssembly();
 
         private readonly IAssemblyResourceReader _assemblyResourceReader;
 
         public SqlFileQueryReader(IAssemblyResourceReader assemblyResourceReader)
         {
             _assemblyResourceReader = assemblyResourceReader ?? throw new ArgumentNullException(nameof(assemblyResourceReader));
-            AssemblyName = assembly.GetName().Name;
+            AssemblyName = _assembly.GetName().Name;
             GetSqlFileResources();
         }
 
         private void GetSqlFileResources()
         {
-            IEnumerable<string> sqlResources = assembly.GetManifestResourceNames().Where(x => x.EndsWith(".sql"));
-            SqlFileResources = _assemblyResourceReader.GetResourcesContent(assembly, sqlResources).Result;
+            IEnumerable<string> sqlResources = _assembly.GetManifestResourceNames().Where(x => x.EndsWith(".sql"));
+            SqlFileResources = _assemblyResourceReader.GetResourcesContent(_assembly, sqlResources).Result;
         }
 
         public string GetQuery(string sqlFileName)

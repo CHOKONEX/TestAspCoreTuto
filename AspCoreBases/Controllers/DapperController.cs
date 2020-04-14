@@ -2,6 +2,7 @@
 using App.Core.Infra.Repositories.Databases;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace TestAspCoreTuto.Controllers
 
         public DapperController(IDapperTestRepository dapperRepository)
         {
-            _employeeRepo = dapperRepository;
+            _employeeRepo = dapperRepository ?? throw new ArgumentNullException(nameof(dapperRepository));
         }
 
         [HttpGet]
