@@ -15,19 +15,18 @@ namespace TestAspCoreTuto.Controllers
     {
         private readonly IDapperTestRepository _employeeRepo;
 
-        public DapperController(IDapperTestRepository employeeRepo)
+        public DapperController(IDapperTestRepository dapperRepository)
         {
-            _employeeRepo = employeeRepo;
+            _employeeRepo = dapperRepository;
         }
 
         [HttpGet]
         [Route("getAll")]
         public async Task<IEnumerable<Person>> GetPersons()
         {
-            var list = (await _employeeRepo.GetPersonsV2()).ToList();
+            List<Person> list = (await _employeeRepo.GetPersonsV2()).ToList();
             return list;
         }
-
 
         [HttpGet]
         [Route("{id}")]

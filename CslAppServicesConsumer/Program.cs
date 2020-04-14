@@ -3,9 +3,9 @@ using CslAppServicesConsumer.Tests.Test1;
 
 namespace CslAppServicesConsumer
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             UserService.Run();
             DapperService.Run();

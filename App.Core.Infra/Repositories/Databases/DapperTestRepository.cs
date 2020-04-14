@@ -26,10 +26,10 @@ namespace App.Core.Infra.Repositories.Databases
             object param = null;
 
             var persons = new Dictionary<int, Person>();
-            return await _databaseReader.ReadOneToManyAsync<Person, Country, Book, Person>(sql, (person, country, book) =>
-            {
-                return MapToPerson(person, country, book, persons);
-            }, "CountryId,BookId", param);
+            return await _databaseReader.ReadOneToManyAsync<Person, Country, Book, Person>(
+                sql,
+                (person, country, book) => MapToPerson(person, country, book, persons),
+                "CountryId,BookId", param);
         }
 
         public async Task<IEnumerable<Person>> GetPersonsV2()
@@ -96,12 +96,9 @@ namespace App.Core.Infra.Repositories.Databases
                 person.Books = new List<Book>();
             }
 
-            if (book != null)
+            if (book != null && !person.Books.Any(x => x.BookId == book.BookId))
             {
-                if (!person.Books.Any(x => x.BookId == book.BookId))
-                {
-                    person.Books.Add(book);
-                }
+                person.Books.Add(book);
             }
 
             return person;

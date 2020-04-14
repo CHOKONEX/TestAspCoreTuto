@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace CslAppServicesConsumer.Tests.Test1
 {
-    public class DapperService
+    public static class DapperService
     {
         private const string BaseUrl = "https://localhost:44356";
 
