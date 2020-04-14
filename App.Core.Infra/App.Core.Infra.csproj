@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SqlQueryFiles\Tests\SqlTestFile.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SqlQueryFiles\Tests\SqlTestFile.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SqlQueryFiles\Readers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Asp.Core\Asp.Core.csproj" />
+  </ItemGroup>
+
+</Project>

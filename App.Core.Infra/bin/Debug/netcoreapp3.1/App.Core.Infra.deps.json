@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "App.Core.Infra/1.0.0": {
+        "dependencies": {
+          "Asp.Core": "1.0.0"
+        },
+        "runtime": {
+          "App.Core.Infra.dll": {}
+        }
+      },
+      "Asp.Core/1.0.0": {
+        "runtime": {
+          "Asp.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "App.Core.Infra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Asp.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
