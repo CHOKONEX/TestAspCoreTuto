@@ -13,5 +13,7 @@ namespace App.Core.Infra.Repositories.Databases
         Task<IEnumerable<DirectorModel>> GetDirectors();
         Task<IEnumerable<string>> GetDirectorsIdentities();
         Task<int> AddMovie(CreateMovieModel movie);
+        Task<int> GetAllDirectorsTotalMovies();
+        Task<int> UpdateMovie();
     }
 }

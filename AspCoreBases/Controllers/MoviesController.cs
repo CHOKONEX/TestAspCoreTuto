@@ -70,6 +70,12 @@ namespace TestAspCoreTuto.Controllers
             return Ok(await _movieRepository.GetDirectorsIdentities());
         }
 
+        [HttpGet("count")]
+        public async Task<IActionResult> GetAllDirectorsTotalMovies()
+        {
+            return Ok(await _movieRepository.GetAllDirectorsTotalMovies());
+        }
+
         [HttpPost("add")]
         public async Task<IActionResult> AddMovie(CreateMovieModel model)
         {
@@ -77,6 +83,18 @@ namespace TestAspCoreTuto.Controllers
             if (result > 0)
             {
                 return Ok(new { Message = "Movie added successfully." });
+            }
+
+            return StatusCode(500, new { Message = "Some error happened." });
+        }
+
+        [HttpGet("update")]
+        public async Task<IActionResult> UpdateMovie()
+        {
+            int result = await _movieRepository.UpdateMovie();
+            if (result > 0)
+            {
+                return Ok(new { Message = "Movie updated successfully." });
             }
 
             return StatusCode(500, new { Message = "Some error happened." });

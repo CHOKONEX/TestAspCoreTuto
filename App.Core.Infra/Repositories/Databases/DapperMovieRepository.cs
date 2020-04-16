@@ -104,7 +104,7 @@ namespace App.Core.Infra.Repositories.Databases
         public async Task<IEnumerable<string>> GetDirectorsIdentities()
         {
             string sql = _sqlFileQueryReader.GetQuery("GetDirectors.sql");
-            return await _databaseReader.ExecuteReaderAsync(sql, this.MapDirectorsFromDataReaderDynamic);
+            return await _databaseReader.ExecuteReaderAsync(sql, MapDirectorsFromDataReaderDynamic);
         }
 
         private IEnumerable<string> MapDirectorsFromDataReaderDynamic(IDataReader reader)
@@ -137,6 +137,48 @@ namespace App.Core.Infra.Repositories.Databases
             object param = new { movie.Name, movie.DirectorId, movie.ReleaseYear };
 
             return await _databaseExecutor.ExecuteAsync(sql, param);
+        }
+
+        public async Task<int> UpdateMovie()
+        {
+            MovieModel movie = new MovieModel 
+            {
+                Id = 1,
+                ReleaseYear = 2013
+            };
+            string sql = "update Movies set ReleaseYear=@ReleaseYear where Id=@Id";
+            return await _databaseExecutor.ExecuteAsync(sql, movie);
+        }
+
+        public async Task<int> GetAllDirectorsTotalMovies()
+        {
+            string storedProcName = "Get_Director_Movies_Count";
+
+            //Director By Id = 1
+            var templateInput = new 
+            {
+                DirectorId = 1
+            };
+            DynamicParameters parameter = new DynamicParameters(templateInput);
+            parameter.Add("@RowCount", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+            await _databaseExecutor.ExecuteAsync(storedProcName, parameter, commandType: CommandType.StoredProcedure);
+            int rowCount = parameter.Get<int>("@RowCount");
+
+            //Many Directors
+            var parameters = new List<DynamicParameters>();
+            for (var i = 1; i < 3; i++)
+            {
+                DynamicParameters parameterToAdd = new DynamicParameters();
+                parameterToAdd.Add("@DirectorId", i, DbType.Int32, ParameterDirection.Input);
+                parameterToAdd.Add("@RowCount", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                parameters.Add(parameterToAdd);
+            }
+
+            await _databaseExecutor.ExecuteAsync(storedProcName, parameters, commandType: CommandType.StoredProcedure);
+            rowCount = parameters.Sum(x => x.Get<int>("@RowCount"));
+            return rowCount;
+
         }
 
         public class Parser

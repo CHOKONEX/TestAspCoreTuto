@@ -33,3 +33,17 @@ GO
 INSERT [dbo].[Movies] ([Id], [Name], [DirectorId], [ReleaseYear]) VALUES (5, N'The Terminator', 2, 1984)  
 GO  
 SET IDENTITY_INSERT [dbo].[Movies] OFF  
+
+
+CREATE PROCEDURE [Get_Director_Movies_Count] 
+	@DirectorId int,
+	@RowCount int = 0 out  
+AS
+BEGIN
+    SET NOCOUNT ON;  
+
+    SELECT @RowCount = Count(*)  
+	FROM dbo.Directors d  
+	INNER JOIN dbo.Movies m ON d.Id = m.DirectorId
+	WHERE d.Id = @DirectorId
+END

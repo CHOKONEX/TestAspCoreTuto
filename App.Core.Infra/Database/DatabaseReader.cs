@@ -1,13 +1,17 @@
 ﻿using Asp.Core.Attributes;
 using Dapper;
+using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Threading.Tasks;
 
+//
+//A buffered query return the entire reader at once.That is ideal in most scenario.
+//A non-buffered query is equivalent as streaming.You only load objects on demand. That can be useful for a very large query to reduce memory usage.
+//
 namespace App.Core.Infra.Database
 {
     [Singleton]
@@ -39,6 +43,24 @@ namespace App.Core.Infra.Database
             }
         }
 
+        public async Task<TReturn> GetAsync<TReturn>(int id) where TReturn : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                return await connection.GetAsync<TReturn>(id);
+            }
+        }
+
+        public async Task<IEnumerable<TReturn>> GetAsync<TReturn>() where TReturn : class
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                return await connection.GetAllAsync<TReturn>();
+            }
+        }
+
         public async Task<IEnumerable<TReturn>> ReadManyAsync<TReturn>(string sql, object param = null, CommandType commandType = CommandType.Text)
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))
@@ -48,30 +70,36 @@ namespace App.Core.Infra.Database
             }
         }
 
-        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TReturn>(string sql, Func<TFirst, TSecond, TReturn> map, object param = null, string splitOn = null)
+        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TReturn>(string sql, 
+            Func<TFirst, TSecond, TReturn> map, 
+            object param = null, string splitOn = null, CommandType commandType = CommandType.Text, bool buffered = true)
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                return await connection.QueryAsync(sql, map, param, splitOn: splitOn);
+                return await connection.QueryAsync(sql, map, param, splitOn: splitOn, buffered: buffered, commandType: commandType);
             }
         }
 
-        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TReturn>(string sql, Func<TFirst, TSecond, TThird, TReturn> map, object param = null, string splitOn = null)
+        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TReturn>(string sql, 
+            Func<TFirst, TSecond, TThird, TReturn> map, 
+            object param = null, string splitOn = null, CommandType commandType = CommandType.Text, bool buffered = true)
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                return await connection.QueryAsync(sql, map, param, splitOn: splitOn);
+                return await connection.QueryAsync(sql, map, param, splitOn: splitOn, buffered: buffered, commandType: commandType);
             }
         }
 
-        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TFourth, TFifth, TReturn>(string sql, Func<TFirst, TSecond, TThird, TFourth, TFifth, TReturn> map, object param = null, string splitOn = null)
+        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TFourth, TFifth, TReturn>(string sql, 
+            Func<TFirst, TSecond, TThird, TFourth, TFifth, TReturn> map, 
+            object param = null, string splitOn = null, CommandType commandType = CommandType.Text, bool buffered = true)
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                return await connection.QueryAsync(sql, map, param, splitOn: splitOn);
+                return await connection.QueryAsync(sql, map, param, splitOn: splitOn, buffered: buffered, commandType: commandType);
             }
         }
 

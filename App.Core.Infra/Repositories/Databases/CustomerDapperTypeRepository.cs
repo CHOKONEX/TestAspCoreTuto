@@ -42,5 +42,41 @@ namespace App.Core.Infra.Repositories.Databases
             string sql = "select * from Customer";
             return await _databaseReader.ReadManyAsync<CustomerModel>(sql);
         }
+
+        public async Task<IEnumerable<Invoice>> GetDirectorsIdentities()
+        {
+            string sql = "SELECT * FROM Invoice;";
+            return await _databaseReader.ExecuteReaderAsync(sql, MapFromDataReaderDynamic);
+        }
+
+        private IEnumerable<Invoice> MapFromDataReaderDynamic(IDataReader reader)
+        {
+            var invoices = new List<Invoice>();
+
+            var storeInvoiceParser = reader.GetRowParser<StoreInvoice>();
+            var webInvoiceParser = reader.GetRowParser<WebInvoice>();
+
+            while (reader.Read())
+            {
+                Invoice invoice;
+
+                int indexOfKind = reader.GetOrdinal("Kind");
+                switch ((InvoiceKind)reader.GetInt32(indexOfKind))
+                {
+                    case InvoiceKind.StoreInvoice:
+                        invoice = storeInvoiceParser(reader);
+                        break;
+                    case InvoiceKind.WebInvoice:
+                        invoice = webInvoiceParser(reader);
+                        break;
+                    default:
+                        throw new Exception("Not exist");
+                }
+
+                invoices.Add(invoice);
+            }
+
+            return invoices;
+        }
     }
 }

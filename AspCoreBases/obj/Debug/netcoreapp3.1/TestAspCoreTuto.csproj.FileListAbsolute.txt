@@ -179,3 +179,4 @@ C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netco
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\App.Core.Dto.dll
 C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\App.Core.Dto.pdb
+C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\AspCoreBases\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll
