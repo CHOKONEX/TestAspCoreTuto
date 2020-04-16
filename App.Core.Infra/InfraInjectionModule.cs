@@ -14,7 +14,7 @@ namespace App.Core.Infra
         {
             IEnumerable<Type> singletons = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(x => x.IsPublic && x.CustomAttributes != null && x.GetCustomAttributes().Any(attr => attr.GetType() == typeof(SingletonAttribute)));
-            
+
             services.RegisterAssemblyPublicNonGenericClasses(Assembly.GetExecutingAssembly())
                 .Where(type => singletons.Contains(type))
                 .AsPublicImplementedInterfaces(ServiceLifetime.Singleton);

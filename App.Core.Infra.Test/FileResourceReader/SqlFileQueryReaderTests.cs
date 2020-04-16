@@ -27,7 +27,7 @@ namespace App.Core.Infra.Test.FileResourceReader
         {
             IAssemblyResourceReader assemblyResourceReader = new AssemblyResourceReader();
             ISqlFileQueryReader sut = new SqlFileQueryReader(assemblyResourceReader);
-            string query = sut.GetQuery("SqlQueryFiles.Tests.SqlTestFile.sql");
+            string query = sut.GetQuery("SqlQueryFiles.UnitTests.SqlTestFile.sql");
             Assert.IsNotEmpty(query);
         }
 
@@ -59,7 +59,7 @@ namespace App.Core.Infra.Test.FileResourceReader
             IAssemblyResourceReader assemblyResourceReader = new AssemblyResourceReader();
             ISqlFileQueryReader sut = new SqlFileQueryReader(assemblyResourceReader);
 
-            string sqlFileName = "SqlQueryFiles.Tests.test.sql";
+            string sqlFileName = "SqlQueryFiles.UnitTests.test.sql";
             Action code = () => sut.GetQuery(sqlFileName);
 
             Assert.Throws(Is.TypeOf<FileNotFoundException>(), code.Invoke);

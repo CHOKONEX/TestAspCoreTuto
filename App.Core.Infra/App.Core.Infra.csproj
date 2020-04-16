@@ -5,13 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SqlQueryFiles\Executors\Inserts\AddMovie.sql" />
+    <None Remove="SqlQueryFiles\Executors\Inserts\DropAndCreateCustomerTableAndType.sql" />
+    <None Remove="SqlQueryFiles\Models\Movies.sql" />
+    <None Remove="SqlQueryFiles\Readers\TestDapper\GetAllDirectors.sql" />
+    <None Remove="SqlQueryFiles\Readers\TestDapper\GetAllMovies.sql" />
+    <None Remove="SqlQueryFiles\Readers\TestDapper\GetDirectorAndHisMovies.sql" />
+    <None Remove="SqlQueryFiles\Readers\TestDapper\GetDirectors.sql" />
+    <None Remove="SqlQueryFiles\Readers\TestDapper\GetMovieById.sql" />
     <None Remove="SqlQueryFiles\Readers\TestDapper\TestDapperOneToMany.sql" />
-    <None Remove="SqlQueryFiles\Tests\SqlTestFile.sql" />
+    <None Remove="SqlQueryFiles\UnitTests\SqlTestFile.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="SqlQueryFiles\Models\DropAndCreateCustomerTableAndType.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Executors\Inserts\AddMovie.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Models\Movies.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Readers\TestDapper\GetDirectorAndHisMovies.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Readers\TestDapper\GetDirectors.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Readers\TestDapper\GetAllDirectors.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Readers\TestDapper\GetMovieById.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Readers\TestDapper\GetAllMovies.sql" />
     <EmbeddedResource Include="SqlQueryFiles\Readers\TestDapper\TestDapperOneToMany.sql" />
-    <EmbeddedResource Include="SqlQueryFiles\Tests\SqlTestFile.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\UnitTests\SqlTestFile.sql" />
   </ItemGroup>
 
   <ItemGroup>

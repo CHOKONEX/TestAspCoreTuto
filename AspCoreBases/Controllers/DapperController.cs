@@ -12,7 +12,7 @@ namespace TestAspCoreTuto.Controllers
     [ApiController]
     [Route("test/dapper")]
     [AllowAnonymous]
-    public class DapperController
+    public class DapperController : ControllerBase
     {
         private readonly IDapperTestRepository _employeeRepo;
 

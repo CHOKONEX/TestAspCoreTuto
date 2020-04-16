@@ -27,10 +27,9 @@ namespace App.Core.Infra.Repositories.Databases
             object param = null;
 
             var persons = new Dictionary<int, Person>();
-            return await _databaseReader.ReadOneToManyAsync<Person, Country, Book, Person>(
-                sql,
+            return await _databaseReader.ReadOneToManyAsync<Person, Country, Book, Person>(sql,
                 (person, country, book) => MapToPerson(person, country, book, persons),
-                "CountryId,BookId", param);
+                param, "CountryId,BookId");
         }
 
         public async Task<IEnumerable<Person>> GetPersonsV2()
@@ -38,7 +37,7 @@ namespace App.Core.Infra.Repositories.Databases
             string sql = _sqlFileQueryReader.GetQuery("TestDapperOneToMany.sql");
             object param = null;
 
-            return await _databaseReader.ReadOneToManyAsync<Person, Country, Book, Person>(sql, MapToPersonV2, "CountryId,BookId", param);
+            return await _databaseReader.ReadOneToManyAsync<Person, Country, Book, Person>(sql, MapToPersonV2, param, "CountryId,BookId");
         }
 
         private static Person MapToPerson(Person person, Country country, Book book, Dictionary<int, Person> persons)

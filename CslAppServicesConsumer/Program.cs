@@ -1,9 +1,9 @@
-﻿using System;
-using CslAppServicesConsumer.Tests.Test1;
+﻿using CslAppServicesConsumer.Tests.Test1;
+using System;
 
 namespace CslAppServicesConsumer
 {
-    static class Program
+    internal static class Program
     {
         private static void Main(string[] args)
         {

@@ -1,0 +1,1 @@
+﻿INSERT INTO dbo.Movies ([Name], [DirectorId], [ReleaseYear]) VALUES(@Name, @DirectorId, @ReleaseYear)

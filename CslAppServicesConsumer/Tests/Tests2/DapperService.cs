@@ -1,9 +1,9 @@
-﻿using System;
+﻿using App.Core.Dto.Tests;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using App.Core.Dto.Tests;
-using Newtonsoft.Json;
 
 namespace CslAppServicesConsumer.Tests.Test1
 {
@@ -56,7 +56,5 @@ namespace CslAppServicesConsumer.Tests.Test1
             }
             return new List<Person>();
         }
-
-        
     }
 }
