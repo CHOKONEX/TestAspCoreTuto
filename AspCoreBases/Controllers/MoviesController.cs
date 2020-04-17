@@ -14,11 +14,14 @@ namespace TestAspCoreTuto.Controllers
     {
         private readonly IDapperMovieRepository _movieRepository;
         private readonly ICustomerDapperTypeRepository _customerDapperTypeRepository;
+        private readonly IDapperArchiveRepository _dapperArchiveRepository;
 
-        public MoviesController(IDapperMovieRepository movieRepository, ICustomerDapperTypeRepository customerDapperTypeRepository)
+        public MoviesController(IDapperMovieRepository movieRepository, ICustomerDapperTypeRepository customerDapperTypeRepository,
+            IDapperArchiveRepository dapperArchiveRepository)
         {
             _movieRepository = movieRepository ?? throw new ArgumentNullException(nameof(movieRepository));
             _customerDapperTypeRepository = customerDapperTypeRepository;
+            _dapperArchiveRepository = dapperArchiveRepository ?? throw new ArgumentNullException(nameof(dapperArchiveRepository));
         }
 
         [HttpGet]
@@ -104,6 +107,13 @@ namespace TestAspCoreTuto.Controllers
         public async Task<IActionResult> GetAllCustomers()
         {
             return Ok(await _customerDapperTypeRepository.GetAllCustomers());
+        }
+
+        [HttpGet("archive")]
+        public async Task<IActionResult> Archive_Table_Movies()
+        {
+            await _dapperArchiveRepository.Archive_Table_Movies();
+            return Ok();
         }
     }
 }

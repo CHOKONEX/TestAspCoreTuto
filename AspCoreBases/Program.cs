@@ -4,7 +4,6 @@ using Serilog;
 using System;
 using TestAspCoreTuto.Bootstrapping;
 using TestAspCoreTuto.Bootstrapping.Extensions;
-using TestAspCoreTuto.Extensions;
 
 namespace TestAspCoreTuto
 {

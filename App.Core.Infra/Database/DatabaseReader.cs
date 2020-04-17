@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 
@@ -58,6 +59,41 @@ namespace App.Core.Infra.Database
             {
                 connection.Open();
                 return await connection.GetAllAsync<TReturn>();
+            }
+        }
+
+        public async Task<DataTable> GetDataTableSchemaFromQuery(string sql, object param = null, CommandType commandType = CommandType.Text)
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                CommandDefinition command = new CommandDefinition(sql, param, commandType: commandType);
+                using (IDataReader reader = await connection.ExecuteReaderAsync(command, commandBehavior: CommandBehavior.KeyInfo))
+                {
+                    return reader.GetSchemaTable();
+                }
+            }
+        }
+
+        public DataTable GetDataTableSchemaBy(string tableName)
+        {
+            using (DbConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                return connection.GetSchema(SqlClientMetaDataCollectionNames.Tables, new[] { null, null, $"[{tableName}]" });
+            }
+        }
+
+        public async Task<DataTable> GetDataTableSchemaFromDataReaderBy(string tableName)
+        {
+            using (IDbConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                CommandDefinition command = new CommandDefinition($"select top 0 * from {tableName}");
+                using (IDataReader reader = await connection.ExecuteReaderAsync(command, commandBehavior: CommandBehavior.KeyInfo))
+                {
+                    return reader.GetSchemaTable();
+                }
             }
         }
 
