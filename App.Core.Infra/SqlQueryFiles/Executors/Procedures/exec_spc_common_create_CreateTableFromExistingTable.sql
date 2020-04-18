@@ -1,0 +1,1 @@
+﻿EXEC [spc_common_create_CreateTableFromExistingTable] @SourceTableName, @TargetTableName, @AddDropIfItExists

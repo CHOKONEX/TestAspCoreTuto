@@ -37,21 +37,56 @@ namespace App.Core.Infra.Repositories.Databases
 
         public async Task Archive_Table_Movies()
         {
-            string queryClean = "Delete from Movies_Archive";
-            await _databaseExecutor.ExecuteAsync(queryClean);
+            string sourceTable = "Movies";
+            string targetTable = $"Movies_Archive_{DateTime.Now:yyyy_MM}";
+
+            //string queryClean = $"Delete from {targetTable}";
+            //await _databaseExecutor.ExecuteAsync(queryClean);   
 
             string sourceConnection = _config.GetConnectionString("MyConnectionString");
             //string targetConnection = _config.GetConnectionString("TargetConnectionString");
-            string query = "select * from Movies";
+            string query = $"select * from {sourceTable}";
 
-            await CompareTables("Movies", "Movies_Archive");
-            await CreateSql("Movies");
+            //await CreateSql("Movies");
+            await CreateTableSchema(sourceTable, targetTable);
+            await CompareTables(sourceTable, $"Movies_Archive_{DateTime.Now:yyyy_MM}");
 
-            SqlBulkCopyHandlerParameters parameters = new SqlBulkCopyHandlerParameters("Movies_Archive");
+            SqlBulkCopyHandlerParameters parameters = new SqlBulkCopyHandlerParameters(targetTable);
             parameters.EnableStreaming = true;
             parameters.BatchSize = 3;
             parameters.NotifyAfter = 3;
             await _sqlBulkCopyHandler.Execute(sourceConnection, sourceConnection, query, parameters);
+        }
+
+        private async Task CreateTableSchema(string sourceTable, string targetTable)
+        {
+            await DropTableIfExist(targetTable);
+
+            string queryCreateTable = _sqlFileQueryReader.GetQuery("exec_spc_common_create_CreateTableFromExistingTable.sql");
+            object paramsCreateTable = new { SourceTableName = sourceTable, TargetTableName  = targetTable, AddDropIfItExists  = false};
+            await _databaseExecutor.ExecuteAsync(queryCreateTable, paramsCreateTable);
+        }
+
+        private async Task DropTableIfExist(string targetTable)
+        {
+            string queryCheckTableExist = _sqlFileQueryReader.GetQuery("common_check_table_if_exist.sql");
+            object paramsCheckTableExist = new { TableName = targetTable };
+            bool? isExist = await _databaseReader.QueryFirstOrDefaultAsync<bool?>(queryCheckTableExist, paramsCheckTableExist);
+            if (isExist.HasValue && isExist.Value)
+            {
+                string queryDropTableExist = _sqlFileQueryReader.GetQuery("common_drop_table_if_exist.sql");
+                object paramsDropTableExist = new { TableName = targetTable };
+                bool onSuccess = await _databaseExecutor.ExecuteScalarAsync<bool>(queryDropTableExist, paramsDropTableExist);
+                if (onSuccess)
+                {
+                    _logger.LogDebug($"{targetTable} was dropped successfully");
+                }
+                else
+                {
+                    _logger.LogError($"{targetTable} was not dropped");
+                    throw new Exception($"{targetTable} was not dropped");
+                }
+            }
         }
 
         private async Task CompareTables(string sourceTable, string targetTable)
@@ -90,7 +125,6 @@ namespace App.Core.Infra.Repositories.Databases
         {
             DataTable sourceDataTable = await _databaseReader.GetDataTableSchemaFromDataReaderBy(sourceTable);
             string newTable = $"{sourceTable}_{DateTime.Now:yyyy_MM}";
-            //string sql = SqlTableCreator.GetCreateFromDataTableSQL(newTable, sourceDataTable);
 
             int[] primaryKeysIndexes = SqlTableCreator.GetPrimaryKeysIndexes(sourceDataTable);
             string sql = SqlTableCreator.GetCreateSQL(newTable, sourceDataTable, primaryKeysIndexes);

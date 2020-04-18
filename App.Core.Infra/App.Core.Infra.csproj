@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="SqlQueryFiles\Deployment\Pre-Deployment\Procedures\spc_common_create_CreateTableFromExistingTable.sql" />
+    <None Remove="SqlQueryFiles\Executors\Drops\common_drop_table_if_exist.sql" />
     <None Remove="SqlQueryFiles\Executors\Inserts\AddMovie.sql" />
     <None Remove="SqlQueryFiles\Executors\Inserts\DropAndCreateCustomerTableAndType.sql" />
+    <None Remove="SqlQueryFiles\Executors\Procedures\exec_spc_common_create_CreateTableFromExistingTable.sql" />
+    <None Remove="SqlQueryFiles\Readers\Selects\Systems\common_check_table_if_exist.sql" />
     <None Remove="SqlQueryFiles\W-Origins\DropAndCreateCustomerTableAndType - Copier.sql" />
     <None Remove="SqlQueryFiles\W-Origins\Movies.sql" />
     <None Remove="SqlQueryFiles\Readers\TestDapper\GetAllDirectors.sql" />
@@ -19,7 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="SqlQueryFiles\Deployment\Pre-Deployment\Procedures\spc_common_generate_GenerateCreateScriptFromTable.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Deployment\Pre-Deployment\Functions\fn_common_generate_GenerateCreateScriptFromTable.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Deployment\Pre-Deployment\Procedures\spc_common_create_CreateTableFromExistingTable.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Executors\Drops\common_drop_table_if_exist.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Executors\Procedures\exec_spc_common_create_CreateTableFromExistingTable.sql" />
+    <EmbeddedResource Include="SqlQueryFiles\Readers\Selects\Systems\common_check_table_if_exist.sql" />
     <EmbeddedResource Include="SqlQueryFiles\W-Origins\DropAndCreateCustomerTableAndType.sql" />
     <EmbeddedResource Include="SqlQueryFiles\Executors\Inserts\AddMovie.sql" />
     <EmbeddedResource Include="SqlQueryFiles\W-Origins\Movies.sql" />

@@ -1,0 +1,10 @@
+﻿IF OBJECT_ID (CONCAT('dbo.', QUOTENAME(@TableName)), N'U') IS NOT NULL
+BEGIN
+	DECLARE @SQL NVARCHAR(150) = 'DROP TABLE dbo.' + QUOTENAME(@TableName) + ''
+	EXECUTE sp_executesql @SQL
+	SELECT 1
+END
+ELSE 
+BEGIN 
+    SELECT 0 
+END 

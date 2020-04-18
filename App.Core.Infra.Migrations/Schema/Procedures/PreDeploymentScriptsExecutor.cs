@@ -30,6 +30,7 @@ namespace App.Core.Infra.Migrations.Schema.Procedures
             {
                 string query = _sqlFileQueryReader.GetQuery(script);
                 Execute.Sql(query);
+                Console.WriteLine($"{script} is created");
             }
         }
 

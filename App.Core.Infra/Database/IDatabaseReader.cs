@@ -18,7 +18,7 @@ namespace App.Core.Infra.Database
         Task<TReturn> ExecuteReaderAsync<TReturn>(string sql, Func<IDataReader, TReturn> func, object param = null, CommandType commandType = CommandType.Text);
 
         Task<TReturn> GetAsync<TReturn>(int id) where TReturn : class;
-        Task<IEnumerable<TReturn>> GetAsync<TReturn>() where TReturn : class;
+        Task<IEnumerable<TReturn>> GetAllAsync<TReturn>() where TReturn : class;
         Task<DataTable> GetDataTableSchemaFromQuery(string sql, object param = null, CommandType commandType = CommandType.Text);
         DataTable GetDataTableSchemaBy(string tableName);
         Task<DataTable> GetDataTableSchemaFromDataReaderBy(string tableName);

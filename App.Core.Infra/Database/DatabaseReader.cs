@@ -53,7 +53,7 @@ namespace App.Core.Infra.Database
             }
         }
 
-        public async Task<IEnumerable<TReturn>> GetAsync<TReturn>() where TReturn : class
+        public async Task<IEnumerable<TReturn>> GetAllAsync<TReturn>() where TReturn : class
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))
             {

@@ -5,17 +5,20 @@ https://stackoverflow.com/questions/706664/generate-sql-create-scripts-for-exist
 
 IF EXISTS (
 	SELECT * FROM sys.objects 
-	WHERE object_id = OBJECT_ID(N'spc_common_generate_GenerateCreateScriptFromTable') 
-	AND type in (N'P', N'PC')
+	WHERE object_id = OBJECT_ID(N'[fn_common_generate_CreationTableScriptFromTable]') 
+	AND type IN (N'FN', N'IF', N'TF')
 )
 BEGIN 
-	DROP PROCEDURE [dbo].[spc_common_generate_GenerateCreateScriptFromTable]
+	DROP FUNCTION [dbo].[fn_common_generate_CreationTableScriptFromTable]
 END
 GO
 
-CREATE PROCEDURE [dbo].[spc_common_generate_GenerateCreateScriptFromTable] 
-	@SourceTableName varchar(Max),
-	@AddDropIfItExists bit = 1
+CREATE FUNCTION [dbo].[fn_common_generate_CreationTableScriptFromTable]
+(	
+	@SourceTableName VARCHAR(MAX),
+	@AddDropIfItExists BIT = 1
+)
+RETURNS VARCHAR(MAX) 
 AS
 BEGIN	
 	DECLARE @object_id                          int;
@@ -203,7 +206,6 @@ BEGIN
 			), N'')
 		as nvarchar(max))
 
-	PRINT @SQL
-	SELECT @SQL
+	RETURN @SQL
 END
 
