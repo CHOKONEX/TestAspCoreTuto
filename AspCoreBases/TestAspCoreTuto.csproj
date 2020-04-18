@@ -14,6 +14,8 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="FluentMigrator" Version="3.2.6" />
+    <PackageReference Include="FluentMigrator.Runner" Version="3.2.6" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.1.1" />
@@ -42,6 +44,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\App.Core.Infra.Migrations\App.Core.Infra.Migrations.csproj" />
     <ProjectReference Include="..\App.Core.Infra\App.Core.Infra.csproj" />
     <ProjectReference Include="..\Asp.Core\Asp.Core.csproj" />
   </ItemGroup>

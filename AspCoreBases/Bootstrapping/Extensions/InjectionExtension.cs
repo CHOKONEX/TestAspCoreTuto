@@ -1,4 +1,5 @@
 ﻿using App.Core.Infra;
+using App.Core.Infra.Migrations;
 using Asp.Core.Common.AssemblyFileReader;
 using Microsoft.Extensions.DependencyInjection;
 using TestAspCoreTuto.Tests.Test1;
@@ -11,7 +12,7 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
         {
             AddInjectionsFromCore(services);
             InfraInjectionModule.AddInjections(services);
-
+            MigratorInjetionModule.AddInjections(services);
             services.AddSingleton<IUserService, UserService>();
         }
 

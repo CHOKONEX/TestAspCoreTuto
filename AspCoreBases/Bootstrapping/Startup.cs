@@ -50,6 +50,7 @@ namespace TestAspCoreTuto.Bootstrapping
             services.AddInjections();
             services.AddJobsInjections();
             services.AddHostedServices();
+            services.AddMigratorExtension(Configuration);
 
             IConfigurationSection appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
