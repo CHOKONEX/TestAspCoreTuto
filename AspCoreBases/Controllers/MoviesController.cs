@@ -1,6 +1,7 @@
 ﻿using App.Core.Dto.Tests;
 using App.Core.Infra.Repositories.Databases;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -15,13 +16,18 @@ namespace TestAspCoreTuto.Controllers
         private readonly IDapperMovieRepository _movieRepository;
         private readonly ICustomerDapperTypeRepository _customerDapperTypeRepository;
         private readonly IDapperArchiveRepository _dapperArchiveRepository;
+        private readonly IDataProtector _protector;
 
         public MoviesController(IDapperMovieRepository movieRepository, ICustomerDapperTypeRepository customerDapperTypeRepository,
-            IDapperArchiveRepository dapperArchiveRepository)
+            IDapperArchiveRepository dapperArchiveRepository, IDataProtectionProvider provider)
         {
             _movieRepository = movieRepository ?? throw new ArgumentNullException(nameof(movieRepository));
             _customerDapperTypeRepository = customerDapperTypeRepository;
             _dapperArchiveRepository = dapperArchiveRepository ?? throw new ArgumentNullException(nameof(dapperArchiveRepository));
+
+            _protector = provider.CreateProtector("string to protect");
+            string crypted = _protector.Protect("plain password");
+            Console.WriteLine($"value protected = {crypted} /unprotect = {_protector.Unprotect(crypted)}");
         }
 
         [HttpGet]

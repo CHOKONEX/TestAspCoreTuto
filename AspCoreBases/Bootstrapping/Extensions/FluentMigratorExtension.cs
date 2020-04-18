@@ -15,18 +15,15 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
             string connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("MyConnectionString");
 
             ServiceProvider serviceProvider = services
-             // Logging is the replacement for the old IAnnouncer
-             .AddLogging(lb => lb.AddFluentMigratorConsole())
-             // Registration of all FluentMigrator-specific services
+             //.AddLogging(lb => lb.AddFluentMigratorConsole())
              .AddFluentMigratorCore()
-             // Configure the runner
              .ConfigureRunner(
                  builder => builder
                     .AddSqlServer()
                     .WithGlobalConnectionString(connectionString)
                     //.WithMigrationsIn(typeof(Migrator).Assembly)
                     .ScanIn(typeof(MigratorInjetionModule).Assembly).For.Migrations())
-             .BuildServiceProvider();
+             .BuildServiceProvider(false);
 
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
             runner.MigrateUp();

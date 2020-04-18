@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace TestAspCoreTuto.Bootstrapping.Attributes
+namespace TestAspCoreTuto.Bootstrapping.ActionFilters
 {
     public class ModelValidationAttribute : ActionFilterAttribute
     {

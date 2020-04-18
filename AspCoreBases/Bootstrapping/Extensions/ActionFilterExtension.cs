@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using TestAspCoreTuto.Bootstrapping.Attributes;
+using TestAspCoreTuto.Bootstrapping.ActionFilters;
 
 namespace TestAspCoreTuto.Bootstrapping.Extensions
 {
