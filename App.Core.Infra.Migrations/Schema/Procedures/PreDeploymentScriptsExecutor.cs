@@ -8,11 +8,11 @@ using System.Linq;
 namespace App.Core.Infra.Migrations.Schema.Procedures
 {
     [EveryTimeMigration]
-    public class _20200418_CreateProceduresByScript : Migration
+    public class PreDeploymentScriptsExecutor : Migration
     {
         private readonly ISqlFileQueryReader _sqlFileQueryReader;
 
-        public _20200418_CreateProceduresByScript(ISqlFileQueryReader sqlFileQueryReader)
+        public PreDeploymentScriptsExecutor(ISqlFileQueryReader sqlFileQueryReader)
         {
             _sqlFileQueryReader = sqlFileQueryReader;
         }
