@@ -1,13 +1,5 @@
 ﻿################################################################################
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
-
-/AspCoreBases/.vs/TestAspCoreTuto/v16
-/TestAspCoreTuto/bin
-/TestAspCoreTuto/obj
-/CslAppServicesConsumer/bin
-/CslAppServicesConsumer/obj
-/AspCoreBases/bin
-/AspCoreBases/obj
-/AspCoreBases/bin/
-/AspCoreBases/obj/
+bin/
+obj/
