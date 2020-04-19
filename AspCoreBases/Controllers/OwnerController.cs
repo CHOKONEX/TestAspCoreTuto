@@ -16,6 +16,14 @@ namespace TestAspCoreTuto.Controllers
             Unauthorized => returns the 401 status code
             Forbid => returns the 403 status code
             StatusCode => returns the status code we provide as input
+
+        200 OK Request was successful; body has response.
+        201 OK POST or PUT was successful; body has latest representation.
+        204 OK DELETE was successful; resource was deleted.
+        400 BAD REQUEST The request was invalid or cannot otherwise be served.
+        401 UNAUTHORIZED Authorization failed or authentication details not supplied.
+        404 NOT FOUND The URI requested or the resource requested doesn’t exist.
+        500 Internal Server Error Something very bad happened. Unhandled exceptions lead to this.
     */
     public class OwnerController : Controller
     {
