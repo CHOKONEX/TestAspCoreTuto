@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using TestAspCoreTuto.Extensions;
 
 namespace TestAspCoreTuto.Bootstrapping.ActionFilters
 {
@@ -9,7 +10,7 @@ namespace TestAspCoreTuto.Bootstrapping.ActionFilters
         {
             if (!context.ModelState.IsValid)
             {
-                context.Result = new BadRequestObjectResult(context.ModelState);
+                context.Result = new BadRequestObjectResult(context.ModelState.GetErrorMessages());
             }
         }
     }
