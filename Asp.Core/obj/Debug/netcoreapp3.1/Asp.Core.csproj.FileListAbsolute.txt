@@ -1,7 +1,0 @@
-C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\Asp.Core\bin\Debug\netcoreapp3.1\Asp.Core.deps.json
-C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\Asp.Core\bin\Debug\netcoreapp3.1\Asp.Core.dll
-C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\Asp.Core\bin\Debug\netcoreapp3.1\Asp.Core.pdb
-C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\Asp.Core\obj\Debug\netcoreapp3.1\Asp.Core.AssemblyInfoInputs.cache
-C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\Asp.Core\obj\Debug\netcoreapp3.1\Asp.Core.AssemblyInfo.cs
-C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\Asp.Core\obj\Debug\netcoreapp3.1\Asp.Core.dll
-C:\Users\PC-CHOKRI\Documents\GitHub\TestAspCoreTuto\Asp.Core\obj\Debug\netcoreapp3.1\Asp.Core.pdb
