@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Core.Dto", "..\App.Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core.Infra.Migrations", "..\App.Core.Infra.Migrations\App.Core.Infra.Migrations.csproj", "{B1E247B9-A751-4097-9E59-9CB8A963FD80}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Net.Core.Features.Test", "..\App.Net.Core.Features.Test\App.Net.Core.Features.Test.csproj", "{D70CAC04-1905-4021-9262-4A258AC7D541}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{B1E247B9-A751-4097-9E59-9CB8A963FD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1E247B9-A751-4097-9E59-9CB8A963FD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1E247B9-A751-4097-9E59-9CB8A963FD80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70CAC04-1905-4021-9262-4A258AC7D541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70CAC04-1905-4021-9262-4A258AC7D541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70CAC04-1905-4021-9262-4A258AC7D541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70CAC04-1905-4021-9262-4A258AC7D541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{78D73D3B-BCE7-4142-B924-B47349F5CF60} = {CA042C20-50C3-4FBE-B828-A4BBD032B3B1}
 		{6A171FCF-DDE9-4FD5-8F57-F5E32DB7C293} = {5976DA76-6DED-4F51-B681-F8A6129D5D82}
 		{B1E247B9-A751-4097-9E59-9CB8A963FD80} = {5976DA76-6DED-4F51-B681-F8A6129D5D82}
+		{D70CAC04-1905-4021-9262-4A258AC7D541} = {CA042C20-50C3-4FBE-B828-A4BBD032B3B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1BE5C24C-B956-4901-B4A3-9D548F2D22DA}

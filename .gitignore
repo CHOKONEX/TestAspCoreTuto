@@ -1,5 +1,31 @@
-﻿################################################################################
+################################################################################
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
-bin/
-obj/
+
+*.cache
+*.pdb
+*.manifest
+
+### VisualStudio ###
+*/.vs/*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# Click-Once directory
+publish/
+
