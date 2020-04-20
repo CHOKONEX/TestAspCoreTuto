@@ -9,6 +9,6 @@
       <ShowUnexecutedTestsMenuOption>true</ShowUnexecutedTestsMenuOption>
       <ShowIgnoredTestsMenuOption>true</ShowIgnoredTestsMenuOption>
     </TestsWindowMenuOptions>
-    <TestsWindowSplitterDistance>160</TestsWindowSplitterDistance>
+    <TestsWindowSplitterDistance>60</TestsWindowSplitterDistance>
   </Settings>
 </SolutionConfiguration>
