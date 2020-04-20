@@ -40,10 +40,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <ProjectReference Include="..\App.Core.Infra.Migrations\App.Core.Infra.Migrations.csproj" />
     <ProjectReference Include="..\App.Core.Infra\App.Core.Infra.csproj" />
     <ProjectReference Include="..\Asp.Core\Asp.Core.csproj" />

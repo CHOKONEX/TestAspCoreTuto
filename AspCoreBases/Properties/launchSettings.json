@@ -12,7 +12,7 @@
     "IIS Express Dev": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "test/movies/archive",
+      "launchUrl": "test/dashboard3/Index",
       "environmentVariables": {
         "ENVIRONMENT": "Dev",
         "ASPNETCORE_ENVIRONMENT": "Development"

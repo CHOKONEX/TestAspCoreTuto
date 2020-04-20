@@ -9,7 +9,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using TestAspCoreTuto.Bootstrapping.Authorizations;
 using TestAspCoreTuto.Bootstrapping.Extensions;
-using TestAspCoreTuto.Bootstrapping.Helpers;
 using TestAspCoreTuto.Extensions;
 
 namespace TestAspCoreTuto.Bootstrapping
@@ -51,9 +50,7 @@ namespace TestAspCoreTuto.Bootstrapping
             services.AddJobsInjections();
             services.AddHostedServices();
             services.AddMigratorExtension(Configuration);
-
-            IConfigurationSection appSettingsSection = Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingsSection);
+            services.AddMapConfigurationSectionClasses(Configuration);
             services.AddAuthentification(Configuration);
             services.AddAuthorization(Configuration);
 

@@ -75,6 +75,7 @@ namespace App.Net.Core.Features.Test.Modules.TestEnums.Impl
                 // => 00001
             */
             /*SHIFTS right (>>) or left (<<)
+                //left (<<)
                 // 1 <<  x => Add 1 zero from right of x
                 // 1 << 0000 => 0001
                 // 1 << 0001 => 0010
