@@ -11,8 +11,12 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
      * Enabling more efficient safe code
      * ref local variables may be reassigned
      * stackalloc arrays support initializers
-     * Enhanced generic constraints unmanaged 
+     * Enhanced generic constraints unmanaged => where T : unmanaged
      * Make existing features better
+            Tuples support == and !=
+            Attach attributes to the backing fields for auto-implemented properties
+            in method overload resolution tiebreaker
+            Extend expression variables in initializers +> public B(int i, out int j)
     */
     public static class TestCsharp73Module
     {

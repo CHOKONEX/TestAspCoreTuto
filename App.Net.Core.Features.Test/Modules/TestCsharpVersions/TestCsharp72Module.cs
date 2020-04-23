@@ -9,10 +9,10 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
     /*********/
     /*
      * Safe efficient code enhancements
-     * Non-trailing named arguments
+     * Non-trailing named arguments => (3, b: 4, c: 5)
      * Leading underscores in numeric literals
      * private protected access modifier
-     * Conditional ref expressions
+     * Conditional ref expressions => ref var r = ref (arr != null ? ref arr[0] : ref otherArr[0])
     */
     public static class TestCsharp72Module
     {
