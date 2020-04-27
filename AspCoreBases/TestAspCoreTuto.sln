@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Core.Infra.Migrations",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Net.Core.Features.Test", "..\App.Net.Core.Features.Test\App.Net.Core.Features.Test.csproj", "{D70CAC04-1905-4021-9262-4A258AC7D541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigDemo", "..\ConfigDemo\ConfigDemo.csproj", "{55F93AA8-A370-4575-9A4A-10C65A3DC23D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigDemo", "..\ConfigDemo\ConfigDemo.csproj", "{55F93AA8-A370-4575-9A4A-10C65A3DC23D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp", "..\WowApp\WowApp.csproj", "{151EADA8-1554-4727-9C6F-035FA7D7BE54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{55F93AA8-A370-4575-9A4A-10C65A3DC23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55F93AA8-A370-4575-9A4A-10C65A3DC23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55F93AA8-A370-4575-9A4A-10C65A3DC23D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151EADA8-1554-4727-9C6F-035FA7D7BE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151EADA8-1554-4727-9C6F-035FA7D7BE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151EADA8-1554-4727-9C6F-035FA7D7BE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151EADA8-1554-4727-9C6F-035FA7D7BE54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{B1E247B9-A751-4097-9E59-9CB8A963FD80} = {5976DA76-6DED-4F51-B681-F8A6129D5D82}
 		{D70CAC04-1905-4021-9262-4A258AC7D541} = {CA042C20-50C3-4FBE-B828-A4BBD032B3B1}
 		{55F93AA8-A370-4575-9A4A-10C65A3DC23D} = {C41321BF-539A-4E81-A13F-876BEB2D18F1}
+		{151EADA8-1554-4727-9C6F-035FA7D7BE54} = {C41321BF-539A-4E81-A13F-876BEB2D18F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1BE5C24C-B956-4901-B4A3-9D548F2D22DA}
