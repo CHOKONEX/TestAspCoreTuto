@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigDemo", "..\ConfigDemo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WowApp", "..\WowApp\WowApp.csproj", "{151EADA8-1554-4727-9C6F-035FA7D7BE54}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorTest", "BlazorTest", "{AE0EACD3-DE60-4932-B5D1-DC08A4903400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
