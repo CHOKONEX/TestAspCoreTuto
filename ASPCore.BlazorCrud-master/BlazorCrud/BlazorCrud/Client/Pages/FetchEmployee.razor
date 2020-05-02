@@ -1,6 +1,7 @@
 ﻿@page "/fetchemployee"
 @using BlazorCrud.Shared.Models
 @inject HttpClient Http
+@inject Services.IEmployeeServices EmployeeServices
 
 <h1>Employee Data</h1>
 
@@ -50,6 +51,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        empList = await Http.GetJsonAsync<Employee[]>("/api/Employee/Index");
+        empList = await EmployeeServices.GetList();
     }
 }

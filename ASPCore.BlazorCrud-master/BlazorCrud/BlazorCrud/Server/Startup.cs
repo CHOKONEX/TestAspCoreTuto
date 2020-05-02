@@ -1,3 +1,4 @@
+using BlazorCrud.Client.Services;
 using BlazorCrud.Server.DataAccess;
 using BlazorCrud.Server.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using System.Net.Http;
 
 namespace BlazorCrud.Server
 {
@@ -16,7 +18,9 @@ namespace BlazorCrud.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
             services.AddTransient<IEmployee, EmployeeDataAccessLayer>();
+
             services.AddResponseCompression(opts =>
             {
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(

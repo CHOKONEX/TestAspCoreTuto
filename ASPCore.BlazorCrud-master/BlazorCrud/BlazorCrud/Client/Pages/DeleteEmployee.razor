@@ -1,7 +1,5 @@
 ﻿@page "/delete/{empID:int}"
-@using BlazorCrud.Shared.Models
-@inject HttpClient Http
-@inject NavigationManager urlNavigationManager
+@inherits Components.DeleteEmployeeDataModel
 
 <h2>Delete Employee</h2>
 <h3>Are you sure you want to delete employee with id : @empID</h3>
@@ -31,28 +29,3 @@
         <button class="btn btn-light" @onclick="Cancel">Cancel</button>
     </div>
 </div>
-
-@code {
-    [Parameter]
-    public int empID { get; set; }
-
-    Employee emp = new Employee();
-
-    protected override async Task OnInitializedAsync()
-    {
-        emp = await Http.GetJsonAsync<Employee>("/api/Employee/Details/" + empID);
-    }
-
-    protected async Task Delete()
-    {
-        await Http.DeleteAsync("api/Employee/Delete/" + Convert.ToInt32(empID));
-        urlNavigationManager.NavigateTo("/fetchemployee");
-    }
-
-    void Cancel()
-    {
-        urlNavigationManager.NavigateTo("/fetchemployee");
-    }
-
-
-}

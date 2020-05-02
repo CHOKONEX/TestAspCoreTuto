@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Text;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using BlazorCrud.Client.Services;
 
 namespace BlazorCrud.Client
 {
@@ -14,7 +12,14 @@ namespace BlazorCrud.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
+            ConfigureServices(builder.Services);
+
             await builder.Build().RunAsync();
+        }
+
+        private static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton<IEmployeeServices, EmployeeServices>();
         }
     }
 }
