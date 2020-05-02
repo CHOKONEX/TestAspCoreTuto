@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Math;
 
 namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
 {
@@ -20,8 +16,8 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
         /*********/
         public partial class Student
         {
-            static void Main()
-            {
+            private void Test13()
+            {   
                 ShowMessage(name: "Jane", age: 17);
             }
 
@@ -131,7 +127,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
             class Moderateur { }
             class Responsable : Moderateur { }
 
-            static void Main(string[] args)
+            static void Main2(string[] args)
             {
                 IMembres<Responsable> responsables = new Membres<Responsable>();
                 IMembres<Moderateur> moderateurs = responsables;
@@ -152,13 +148,13 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
             public class Customer : Person
             {
                 public int CustomerId { get; set; }
-                public void Process() {}
+                public void Process() { }
             }
 
             public class SalesRep : Person
             {
                 public int SalesRepId { get; set; }
-                public void SellStuff() {}
+                public void SellStuff() { }
             }
 
             public class FooClass<T>

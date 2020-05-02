@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace App.Core.Infra.Extensions
 {
@@ -94,7 +93,7 @@ namespace App.Core.Infra.Extensions
             // columns
             foreach (DataRow dataRow in schema.Rows)
             {
-                if (!(schema.Columns.Contains("IsHidden") 
+                if (!(schema.Columns.Contains("IsHidden")
                     && dataRow["IsHidden"] != DBNull.Value && (bool)dataRow["IsHidden"]))
                 {
                     sql += dataRow["ColumnName"].ToString() + " " + SQLGetType(dataRow);
@@ -181,7 +180,7 @@ namespace App.Core.Infra.Extensions
                 if (schema.Columns.Contains("IsKey") && !dataRow.IsNull("IsKey") && (bool)dataRow["IsKey"])
                 {
                     keys.Add(i);
-                }   
+                }
             }
 
             return keys.ToArray();

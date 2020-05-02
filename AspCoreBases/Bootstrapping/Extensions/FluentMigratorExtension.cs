@@ -1,8 +1,5 @@
-﻿using System;
-using System.Linq;
-using App.Core.Infra.Migrations;
+﻿using App.Core.Infra.Migrations;
 using FluentMigrator.Runner;
-using FluentMigrator.Runner.Initialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

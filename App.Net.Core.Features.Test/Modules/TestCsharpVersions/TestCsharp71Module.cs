@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
@@ -63,7 +61,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
          */
         public partial class Student
         {
-            public class A {}
+            public class A { }
             public struct B { }
 
             public void Method<T>(T param)

@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
 using TestAspCoreTuto.Bootstrapping.Authorizations;
 using TestAspCoreTuto.Bootstrapping.Extensions;
 using TestAspCoreTuto.Extensions;
@@ -106,7 +106,7 @@ namespace TestAspCoreTuto.Bootstrapping
             app.UseCustomSwagger();
             app.UseResponseCompression();
 
-            applicationLifetime.ApplicationStarted.Register(()=> OnStarted(logger));
+            applicationLifetime.ApplicationStarted.Register(() => OnStarted(logger));
             applicationLifetime.ApplicationStopping.Register(() => OnShutdown(logger));
         }
 

@@ -37,7 +37,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
         /*********/
         public partial class Student
         {
-            static void Main(string[] args)
+            static void Main3(string[] args)
             {
                 string a = ", middle name,";
 
@@ -55,7 +55,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
         /*********/
         public partial class Student
         {
-            public static void Main()
+            public static void Main6()
             {
                 ShowCallerInfo("msg");
                 Console.ReadKey();

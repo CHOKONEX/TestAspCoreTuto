@@ -1,8 +1,8 @@
-﻿using System;
-using ConfigDemo.Models;
+﻿using ConfigDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using System;
 
 namespace ConfigDemo.Controllers
 {

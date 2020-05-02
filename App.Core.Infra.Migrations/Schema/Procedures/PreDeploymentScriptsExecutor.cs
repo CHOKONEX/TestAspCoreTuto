@@ -21,7 +21,7 @@ namespace App.Core.Infra.Migrations.Schema.Procedures
         {
             IEnumerable<string> scripts = typeof(InfraInjectionModule).Assembly
                 .GetManifestResourceNames()
-                .Where(x => 
+                .Where(x =>
                     x.Contains("Deployment", StringComparison.CurrentCultureIgnoreCase) &&
                     x.EndsWith(".sql")
                  ).ToList();

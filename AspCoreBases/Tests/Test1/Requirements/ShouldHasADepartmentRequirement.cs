@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using Microsoft.AspNetCore.Authorization;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 
 namespace TestAspCoreTuto.Tests.Test1.Requirements
 {

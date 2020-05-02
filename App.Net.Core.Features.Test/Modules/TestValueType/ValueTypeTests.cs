@@ -22,7 +22,7 @@ namespace App.Net.Core.Features.Test
             // ValueTuple with eight elements 
             ValueTuple<int, int, int, int, int, int, int, ValueTuple<int>> ValTpl3 = new ValueTuple<int,
                                       int, int, int, int, int, int, ValueTuple<int>>(45, 67, 65, 34, 34,
-                                                                        34, 23, new ValueTuple<int>(90));         
+                                                                        34, 23, new ValueTuple<int>(90));
         }
         [Test]
         public void should_test_v2()
@@ -31,7 +31,7 @@ namespace App.Net.Core.Features.Test
             (int age, string Aname, string Lang) author = (23, "Sonia", "C#");
             Assert.AreEqual(23, author.age);
 
-            (int age, string Aname, string Lang) authorV2 = (age: 23, Aname : "Sonia", Lang : "C#");
+            (int age, string Aname, string Lang) authorV2 = (age: 23, Aname: "Sonia", Lang: "C#");
             Assert.AreEqual(23, authorV2.age);
             Assert.AreEqual("Sonia", authorV2.Aname);
             authorV2.age = 24;
@@ -73,7 +73,7 @@ namespace App.Net.Core.Features.Test
             return (23, "Sophite", "USA");
         }
 
-        private static(int, string, string) GetPerson()
+        private static (int, string, string) GetPerson()
         {
             return (Id: 1, FirstName: "Bill", LastName: "Gates");
         }

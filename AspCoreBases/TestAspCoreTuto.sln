@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Net.Core.Features.Test"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigDemo", "..\ConfigDemo\ConfigDemo.csproj", "{55F93AA8-A370-4575-9A4A-10C65A3DC23D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowApp", "..\WowApp\WowApp.csproj", "{151EADA8-1554-4727-9C6F-035FA7D7BE54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WowApp", "..\WowApp\WowApp.csproj", "{151EADA8-1554-4727-9C6F-035FA7D7BE54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

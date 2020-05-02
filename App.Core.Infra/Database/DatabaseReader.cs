@@ -106,8 +106,8 @@ namespace App.Core.Infra.Database
             }
         }
 
-        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TReturn>(string sql, 
-            Func<TFirst, TSecond, TReturn> map, 
+        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TReturn>(string sql,
+            Func<TFirst, TSecond, TReturn> map,
             object param = null, string splitOn = null, CommandType commandType = CommandType.Text, bool buffered = true)
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))
@@ -117,8 +117,8 @@ namespace App.Core.Infra.Database
             }
         }
 
-        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TReturn>(string sql, 
-            Func<TFirst, TSecond, TThird, TReturn> map, 
+        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TReturn>(string sql,
+            Func<TFirst, TSecond, TThird, TReturn> map,
             object param = null, string splitOn = null, CommandType commandType = CommandType.Text, bool buffered = true)
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))
@@ -128,8 +128,8 @@ namespace App.Core.Infra.Database
             }
         }
 
-        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TFourth, TFifth, TReturn>(string sql, 
-            Func<TFirst, TSecond, TThird, TFourth, TFifth, TReturn> map, 
+        public async Task<IEnumerable<TReturn>> ReadOneToManyAsync<TFirst, TSecond, TThird, TFourth, TFifth, TReturn>(string sql,
+            Func<TFirst, TSecond, TThird, TFourth, TFifth, TReturn> map,
             object param = null, string splitOn = null, CommandType commandType = CommandType.Text, bool buffered = true)
         {
             using (IDbConnection connection = new SqlConnection(ConnectionString))

@@ -1,5 +1,4 @@
-﻿using App.Core.Dto.Tests;
-using App.Core.Infra.Database;
+﻿using App.Core.Infra.Database;
 using App.Core.Infra.Extensions;
 using App.Core.Infra.Models;
 using App.Core.Infra.SqlResourcesReader;
@@ -7,9 +6,7 @@ using Asp.Core.Attributes;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace App.Core.Infra.Repositories.Databases
@@ -63,7 +60,7 @@ namespace App.Core.Infra.Repositories.Databases
             await DropTableIfExist(targetTable);
 
             string queryCreateTable = _sqlFileQueryReader.GetQuery("exec_spc_common_create_CreateTableFromExistingTable.sql");
-            object paramsCreateTable = new { SourceTableName = sourceTable, TargetTableName  = targetTable, AddDropIfItExists  = false};
+            object paramsCreateTable = new { SourceTableName = sourceTable, TargetTableName = targetTable, AddDropIfItExists = false };
             await _databaseExecutor.ExecuteAsync(queryCreateTable, paramsCreateTable);
         }
 

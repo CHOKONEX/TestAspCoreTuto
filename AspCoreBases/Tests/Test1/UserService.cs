@@ -20,15 +20,15 @@ namespace TestAspCoreTuto.Tests.Test1
         {
             new User
             {
-                Id = 1, FirstName = "Admin", 
-                LastName = "User", Username = "admin", 
+                Id = 1, FirstName = "Admin",
+                LastName = "User", Username = "admin",
                 Password = "admin", Role = "Admin",
                 Email = "admin@gmail.com", Poste = "Director", Department = "PARIS"
             },
             new User
             {
-                Id = 2, FirstName = "Normal", 
-                LastName = "User", Username = "user", 
+                Id = 2, FirstName = "Normal",
+                LastName = "User", Username = "user",
                 Password = "user", Role = "User",
                 Email = "user@gmail.com", Poste = "Employee", Department = "PARIS"
             },

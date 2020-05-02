@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
 {
@@ -208,7 +205,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
                 public T Y;
             }
 
-            public static void Main()
+            public static void Main2()
             {
                 DisplaySize<Coords<int>>();
                 DisplaySize<Coords<double>>();

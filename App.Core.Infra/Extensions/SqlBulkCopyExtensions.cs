@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Reflection;
 using System.Data.SqlClient;
+using System.Reflection;
 using static System.Reflection.BindingFlags;
 
 namespace App.Core.Infra.Extensions

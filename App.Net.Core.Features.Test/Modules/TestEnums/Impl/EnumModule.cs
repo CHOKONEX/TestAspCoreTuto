@@ -27,7 +27,7 @@ namespace App.Net.Core.Features.Test.Modules.TestEnums.Impl
         }
 
         //[Flags]. This allows them to be treated as bit masks, storing multiple values
-        [Flags] 
+        [Flags]
         public enum Days
         {
             None = 0b_0000_0000,  // 0

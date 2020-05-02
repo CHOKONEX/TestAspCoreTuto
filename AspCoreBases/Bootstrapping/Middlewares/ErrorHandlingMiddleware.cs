@@ -37,7 +37,7 @@ namespace TestAspCoreTuto.Bootstrapping.Middlewares
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
             string result = JsonConvert.SerializeObject(
-                new 
+                new
                 {
                     context.Response.StatusCode,
                     ex.Message

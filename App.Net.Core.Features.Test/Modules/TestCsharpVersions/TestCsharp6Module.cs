@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
-using static System.Math;
 
 namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
 {
@@ -70,7 +68,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
         // using static System.Math;
         public partial class Student
         {
-            
+
         }
 
         /*Null - Opérateurs conditionnel*/
@@ -88,7 +86,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
         /*********/
         public partial class Student
         {
-            public string GetGradePointPercentage() =>  $"Name: {LastName}, {FirstName}";
+            public string GetGradePointPercentage() => $"Name: {LastName}, {FirstName}";
 
             public string GetGradePointPercentageV2()
             {

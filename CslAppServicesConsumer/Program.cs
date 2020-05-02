@@ -1,5 +1,4 @@
-﻿using CslAppServicesConsumer.Tests.Test1;
-using System;
+﻿using System;
 
 namespace CslAppServicesConsumer
 {

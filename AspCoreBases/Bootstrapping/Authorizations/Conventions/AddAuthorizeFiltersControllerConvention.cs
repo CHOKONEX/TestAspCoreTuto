@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc.ApplicationModels;
-using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace TestAspCoreTuto.Bootstrapping.Authorizations.Conventions
 {

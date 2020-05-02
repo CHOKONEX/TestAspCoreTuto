@@ -187,7 +187,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
                 }
             }
 
-            static void Main()
+            static void Main1()
             {
                 IBook ib = new Book();
                 ib.AddBook("Wings of Fire", "Dr.A.P.J Abdul Kalam");
@@ -457,7 +457,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
         */
         public partial class Student
         {
-            static void Main(string[] args)
+            static void Main6(string[] args)
             {
                 string s = (args.Length > 0) ? args[0] : null;
                 Console.WriteLine(s.Length);
@@ -810,7 +810,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions.TestCSharp6
                 "lazy",     // 7                   ^2
                 "dog"       // 8                   ^1
             };              // 9 (or words.Length) ^0
-        
+
             public void Test6()
             {
                 Console.WriteLine($"The last word is {words[^1]}"); // writes "dog"

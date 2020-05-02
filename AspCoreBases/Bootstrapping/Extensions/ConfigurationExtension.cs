@@ -10,7 +10,7 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
         public static void AddConfiguration(this IConfigurationBuilder configurationBuilder, HostBuilderContext hostingContext, string[] args)
         {
             string environmentName = hostingContext.HostingEnvironment.EnvironmentName;
-            
+
             string executableLocation = AppContext.BaseDirectory;
             string pathOfCommonSettingsFile = Path.Combine(executableLocation, "Properties");
 

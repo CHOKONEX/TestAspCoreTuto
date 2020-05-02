@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using TestAspCoreTuto.BackgroundWorkers;
 
 namespace TestAspCoreTuto.Bootstrapping.Extensions
 {

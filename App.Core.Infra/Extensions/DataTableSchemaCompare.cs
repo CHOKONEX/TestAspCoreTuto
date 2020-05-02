@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 
 /*
  https://stackoverflow.com/questions/7313282/check-to-see-if-2-datatable-have-same-schema

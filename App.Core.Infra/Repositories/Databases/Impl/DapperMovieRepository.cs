@@ -141,7 +141,7 @@ namespace App.Core.Infra.Repositories.Databases
 
         public async Task<int> UpdateMovie()
         {
-            MovieModel movie = new MovieModel 
+            MovieModel movie = new MovieModel
             {
                 Id = 1,
                 ReleaseYear = 2013
@@ -155,7 +155,7 @@ namespace App.Core.Infra.Repositories.Databases
             string storedProcName = "Get_Director_Movies_Count";
 
             //Director By Id = 1
-            var templateInput = new 
+            var templateInput = new
             {
                 DirectorId = 1
             };

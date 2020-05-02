@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mime;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mime;
 using TestAspCoreTuto.Models;
 
 namespace TestAspCoreTuto.Controllers
@@ -80,7 +80,8 @@ namespace TestAspCoreTuto.Controllers
             _logger.LogWarning($"GetById {id}");
             TodoItem custormer = new TodoItem
             {
-                Id = 12, Name = "GoGo12"
+                Id = 12,
+                Name = "GoGo12"
             };
             return new ObjectResult(custormer);
         }

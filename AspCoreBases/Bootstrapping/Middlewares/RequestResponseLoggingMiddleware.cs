@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
 namespace TestAspCoreTuto.Bootstrapping.Middlewares
@@ -24,7 +24,7 @@ namespace TestAspCoreTuto.Bootstrapping.Middlewares
         {
             if (httpContext == null) throw new ArgumentNullException(nameof(httpContext));
 
-            
+
             Stopwatch sw = Stopwatch.StartNew();
             try
             {

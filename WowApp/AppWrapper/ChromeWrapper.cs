@@ -39,7 +39,7 @@ namespace WowApp
         public AppWrapper(int pid)
         {
             List<Process> processes = Process.GetProcesses().ToList();
-            foreach (Process process in processes.Where(x=> x.Id == pid))
+            foreach (Process process in processes.Where(x => x.Id == pid))
             {
                 if (process.MainWindowHandle == IntPtr.Zero)// the chrome process must have a window
                     continue;

@@ -15,7 +15,7 @@ namespace Asp.Core.Common.AssemblyFileReader
                 throw new ArgumentNullException(nameof(resourceNames));
             }
 
-            Dictionary<string, string> dict = new Dictionary<string, string>(); 
+            Dictionary<string, string> dict = new Dictionary<string, string>();
             foreach (string resourceName in resourceNames)
             {
                 dict.Add(resourceName, await ReadFileAsync(assembly, resourceName));

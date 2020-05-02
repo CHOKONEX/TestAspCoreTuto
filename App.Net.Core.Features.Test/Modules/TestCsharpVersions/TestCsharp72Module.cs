@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
 {
@@ -180,7 +177,7 @@ namespace App.Net.Core.Features.Test.Modules.TestCsharpVersions
                 }
             }
 
-            
+
             public class ProtectedInternalClass
             {
                 void Access()
