@@ -25,7 +25,6 @@ namespace TestAspCoreTuto.Bootstrapping.Extensions
             IConfigurationSection appSettingsSection = configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
 
-
             services.Configure<DashboardHeaderConfiguration>(configuration.GetSection("DashboardSettings:Header"));
             services.AddSingleton<IConfigurationReader, ConfigurationReader>();
         }

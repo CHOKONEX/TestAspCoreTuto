@@ -18,12 +18,12 @@ namespace Asp.Core.Common.AssemblyFileReader
             Dictionary<string, string> dict = new Dictionary<string, string>();
             foreach (string resourceName in resourceNames)
             {
-                dict.Add(resourceName, await ReadFileAsync(assembly, resourceName));
+                dict.Add(resourceName, await ReadFileAsync(assembly, resourceName).ConfigureAwait(false));
             }
             return dict;
         }
 
-        private async Task<string> ReadFileAsync(Assembly assembly, string resourceName)
+        private static async Task<string> ReadFileAsync(Assembly assembly, string resourceName)
         {
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {

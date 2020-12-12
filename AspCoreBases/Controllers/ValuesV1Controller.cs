@@ -13,18 +13,38 @@ namespace TestAspCoreTuto.Controllers
         {
             return new string[] { "value one from api version", "One" };
         }
-    }
 
-
-    [ApiVersion("2.0")]
-    [Route("api/values")]
-    [ApiController]
-    public class ValuesV2Controller : ControllerBase
-    {
-        [HttpGet]
-        public IEnumerable<string> Get()
+        /// <summary>
+        /// Retrieves a specific product by unique id
+        /// </summary>
+        /// <returns>The list of Employees.</returns>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     POST api/value
+        ///     {        
+        ///       "id": "Mike",    
+        ///     }
+        /// </remarks>
+        /// <param name="id">Id : string</param>  
+        // GET: api/Employee
+        [HttpGet("{id}")]
+        public IEnumerable<string> Get(string id)
         {
-            return new string[] { "value two from the api version", "two" };
+            return new string[] { "value one from api version", id };
         }
     }
+
+
+    //[ApiVersion("2.0")]
+    //[Route("api/values")]
+    //[ApiController]
+    //public class ValuesV2Controller : ControllerBase
+    //{
+    //    [HttpGet]
+    //    public IEnumerable<string> Get()
+    //    {
+    //        return new string[] { "value two from the api version", "two" };
+    //    }
+    //}
 }

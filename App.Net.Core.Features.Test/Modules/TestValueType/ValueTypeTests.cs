@@ -73,6 +73,11 @@ namespace App.Net.Core.Features.Test
             return (23, "Sophite", "USA");
         }
 
+        private static (int age, string firstName, string lastName) TouristDetails2()
+        {
+            return (23, "Sophite", "USA");
+        }
+
         private static (int, string, string) GetPerson()
         {
             return (Id: 1, FirstName: "Bill", LastName: "Gates");

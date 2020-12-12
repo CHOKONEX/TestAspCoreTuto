@@ -62,21 +62,21 @@ namespace TestAspCoreTuto.Controllers
         }
     }
 
-    [ApiController]
-    [Route("test/dashboard3")]
-    [AllowAnonymous]
-    public class Dashboard3Controller : Controller
-    {
-        private readonly IConfigurationReader configurationReader;
+    //[ApiController]
+    //[Route("test/dashboard3")]
+    //[AllowAnonymous]
+    //public class Dashboard3Controller : Controller
+    //{
+    //    private readonly IConfigurationReader configurationReader;
 
-        public Dashboard3Controller(IConfigurationReader configurationReader)
-        {
-            this.configurationReader = configurationReader;
-        }
+    //    public Dashboard3Controller(IConfigurationReader configurationReader)
+    //    {
+    //        this.configurationReader = configurationReader;
+    //    }
 
-        public IActionResult Index()
-        {
-            return Content(configurationReader.ReadDashboardHeaderSettings());
-        }
-    }
+    //    public IActionResult Index()
+    //    {
+    //        return Content(configurationReader?.ReadDashboardHeaderSettings());
+    //    }
+    //}
 }

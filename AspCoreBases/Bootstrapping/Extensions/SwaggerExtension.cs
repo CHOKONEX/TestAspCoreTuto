@@ -18,13 +18,7 @@ namespace TestAspCoreTuto.Extensions
                     Version = "v1",
                     Title = "My API",
                     Description = "My First ASP.NET Core Web API",
-                    TermsOfService = new System.Uri("https://www.talkingdotnet.com"),
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Shayne Boyer",
-                        Email = string.Empty,
-                        Url = new Uri("https://twitter.com/spboyer"),
-                    },
+                    TermsOfService = new Uri("https://www.talkingdotnet.com"),
                     License = new OpenApiLicense
                     {
                         Name = "Use under LICX",
